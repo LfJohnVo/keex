@@ -12,6 +12,9 @@ class Product extends Model
 
     protected $dates = ['deleted_at'];
 
+    const BORRADOR = 1;
+    const PUBLICADO = 2;
+
     protected $guarded = [
         'id',
         'created_at',
