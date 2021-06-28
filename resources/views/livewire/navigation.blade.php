@@ -1,33 +1,24 @@
-<style>
-    #navigation-menu {
-        height: calc(100vh - 4rem);
-    }
-
-    .navigation-link:hover .navigation-submenu {
-        display: block !important;
-    }
-
-</style>
-
-<header class="sticky top-0 bg-gray-900">
-    <div class="container flex items-center h-16">
-        <a
-            class="flex flex-col items-center justify-center h-full px-4 text-white bg-white bg-opacity-25 cursor-pointer semibold">
+<header class="sticky top-0 bg-gray-900" x-data="dropdown()">
+    <div class="container flex items-center justify-between h-16 md:justify-start">
+        <a :class="{'bg-opacity-100 text-blue-600' : open}" x-on:click="show()"
+            class="flex flex-col items-center justify-center order-last h-full px-6 text-white bg-white bg-opacity-25 cursor-pointer md:px-4 md:order-first semibold">
             <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round"
                     stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <span>Categorias</span>
+            <span class="hidden text-sm md:block">Categorias</span>
         </a>
 
         <a href="/" class="mx-6">
             <x-jet-application-mark class="block w-auto h-9" />
         </a>
 
-        @livewire('search')
+        <div class="flex-1 hidden md:block">
+            @livewire('search')
+        </div>
 
         <!-- Settings Dropdown -->
-        <div class="relative mx-6">
+        <div class="relative hidden mx-6 md:block">
             @auth
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -61,7 +52,7 @@
                             @csrf
 
                             <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                    this.closest('form').submit();">
+                                                                                        this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -85,15 +76,17 @@
             @endauth
         </div>
 
-        @livewire('dropdown-cart')
+        <div class="hidden mx-6 md:block">
+            @livewire('dropdown-cart')
+        </div>
 
     </div>
 
-    <nav id="navigation-menu" class="absolute w-full bg-black bg-opacity-25">
-        <div class="container h-full">
-
+    <nav id="navigation-menu" x-show="open" class="absolute w-full bg-black bg-opacity-25">
+        {{-- Menu para computadoras --}}
+        <div class="container hidden h-full md:block">
             {{-- Menu a mostrar durante el hover --}}
-            <div class="relative grid h-full grid-cols-4">
+            <div x-on:click.away="close()" class="relative grid h-full grid-cols-4">
                 <ul class="bg-white text-black-600">
                     @foreach ($categories as $category)
                         <li class="navigation-link hover:bg-purple-400 hover:text-white">
@@ -119,5 +112,71 @@
 
             </div>
         </div>
+        {{-- Menu para computadoras --}}
+
+        {{-- menu movil --}}
+        <div class="h-full overflow-y-auto bg-white">
+
+            <div class="container py-3 pb-3 mb-3 bg-gray-200">
+                @livewire('search')
+            </div>
+
+            <ul>
+                @foreach ($categories as $category)
+                    <li class="hover:bg-purple-400 hover:text-white">
+                        <a class="flex items-center px-4 py-2 text-sm " href="">
+                            <span class="flex justify-center w-9">
+                                {!! $category->icon !!}
+                            </span>
+                            {{ $category->name }}
+                        </a>
+
+                    </li>
+                @endforeach
+            </ul>
+
+            <p class="px-6 my-2 text-gray-500">USUARIOS</p>
+            @livewire('cart-mobile')
+            @auth
+                <a href="{{ route('profile.show') }}"
+                    class="flex items-center px-4 py-2 text-sm hover:bg-purple-400 hover:text-white" href="">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-user-circle"></i>
+                    </span>
+                    Perfil
+                </a>
+
+                <a href="" onclick="event.preventDefault();
+                                    document.getElementById('logout-from').submit()"
+                    class="flex items-center px-4 py-2 text-sm hover:bg-purple-400 hover:text-white" href="">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </span>
+                    Cerrar sesión
+                </a>
+
+                <form id="logout-from" action="{{ route('logout') }}" method="POST" class="hidden">
+                    @csrf
+                </form>
+            @else
+                <a href="{{ route('login') }}"
+                    class="flex items-center px-4 py-2 text-sm hover:bg-purple-400 hover:text-white" href="">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-user-circle"></i>
+                    </span>
+                    Iniciar sesión
+                </a>
+
+                <a href="{{ route('register') }}"
+                    class="flex items-center px-4 py-2 text-sm hover:bg-purple-400 hover:text-white" href="">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-fingerprint"></i>
+                    </span>
+                    Registrate
+                </a>
+            @endauth
+
+        </div>
+        {{-- menu movil --}}
     </nav>
 </header>
