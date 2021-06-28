@@ -33,5 +33,30 @@
         @stack('modals')
 
         @livewireScripts
+
+        //hamburguer menu
+        <script>
+            function dropdown() {
+                return {
+                    open: false,
+                    show(){
+                        if(this.open){
+                            //se cierra el menu
+                            this.open = false;
+                            document.getElemntByTagName('html')[0].style.oveflow = 'auto';
+                        }else{
+                            //se abre
+                            this.open = true;
+                            document.getElemntByTagName('html')[0].style.oveflow = 'hidden';
+                        }
+                    },
+                    close(){
+                        this.open = false;
+                            document.getElemntByTagName('html')[0].style.oveflow = 'auto';
+                    }
+                }
+            }
+        </script>
+
     </body>
 </html>
