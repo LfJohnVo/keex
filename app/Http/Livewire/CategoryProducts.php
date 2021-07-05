@@ -13,7 +13,7 @@ class CategoryProducts extends Component
     //LazyLoad function for products
     public function loadPosts(){
         //cargar productos dentro del array para renderizarlo despues
-        $this->products = $this->category->products;
+        $this->products = $this->category->products()->where('status', 2)->take(15)->get();
         //emitir evento de carga para volver a renderizar
         $this->emit('glider', $this->category->id);
     }

@@ -34,12 +34,14 @@
             </main>
         </div>
 
+        @livewire('footer')
+
         @stack('modals')
 
         @livewireScripts
 
-        //hamburguer menu
         <script>
+            //hamburguer menu
             function dropdown() {
                 return {
                     open: false,
