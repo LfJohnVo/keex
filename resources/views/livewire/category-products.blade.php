@@ -1,7 +1,8 @@
 <div wire:init="loadPosts">
     @if (count($products))
         <div class="glider-contain">
-            <ul class="glider">
+            {{-- Pass Id from product to glider function --}}
+            <ul class="glider-{{ $category->id }}">
 
                 @foreach ($products as $product)
 
