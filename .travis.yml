@@ -3,7 +3,7 @@ languaje: node_js
 
 php:
   - 7.4
-  - 8.1
+  #- 8.1
 
 node_js:
   - 12
