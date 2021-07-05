@@ -15,12 +15,12 @@ before_script:
   - composer self-update
   - composer install --no-interaction --dev
   - php artisan key:generate
+  - php artisan optimize
   - php artisan migrate
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
   - npm install
   - npm run dev
-  - php artisan optimize
 
 before_install:
   - mysql -e 'create database homestead_test;'
@@ -33,7 +33,6 @@ cache:
   directories:
     - node_modules
     - vendor
-
 #deploy:
 #  provider: heroku
 #  api_key:
