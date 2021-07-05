@@ -4,6 +4,9 @@ php:
   - 7.4
   - 8.1
 
+node_js:
+  - 12
+
 os: linux
 
 services:
@@ -22,7 +25,6 @@ before_script:
   - rm -rf node_modules
   - rm package-lock.json
   - npm cache clear --force
-  - npm install -g n
   - npm install
   - npm run dev
 
