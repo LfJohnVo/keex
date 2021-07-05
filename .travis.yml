@@ -17,14 +17,14 @@ before_script:
   - chmod 777 -R storage
   - cp .env.travis .env
   - composer self-update
-  - composer install --no-interaction
+  - composer install
   - php artisan key:generate
   - php artisan optimize
   - php artisan migrate
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
-  - rm -rf node_modules
-  - rm package-lock.json
+  #- rm -rf node_modules
+  #- rm package-lock.json
   - npm cache clear --force
   - npm install
   - npm run dev
