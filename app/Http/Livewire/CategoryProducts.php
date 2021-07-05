@@ -15,7 +15,7 @@ class CategoryProducts extends Component
         //cargar productos dentro del array para renderizarlo despues
         $this->products = $this->category->products;
         //emitir evento de carga para volver a renderizar
-        $this->emit('glider');
+        $this->emit('glider', $this->category->id);
     }
 
     public function render()

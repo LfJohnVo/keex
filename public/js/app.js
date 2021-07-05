@@ -1096,7 +1096,7 @@ var require_reactivity_cjs = __commonJS((exports) => {
     return createRef(value, true);
   }
   var RefImpl = class {
-    constructor(_rawValue, _shallow = false) {
+    constructor(_rawValue, _shallow) {
       this._rawValue = _rawValue;
       this._shallow = _shallow;
       this.__v_isRef = true;
@@ -1858,17 +1858,24 @@ function start() {
     directives(el, attrs).forEach((handle) => handle());
   });
   let outNestedComponents = (el) => !closestRoot(el.parentNode || closestRoot(el));
-  Array.from(document.querySelectorAll(rootSelectors())).filter(outNestedComponents).forEach((el) => {
+  Array.from(document.querySelectorAll(allSelectors())).filter(outNestedComponents).forEach((el) => {
     initTree(el);
   });
   dispatch(document, "alpine:initialized");
 }
 var rootSelectorCallbacks = [];
+var initSelectorCallbacks = [];
 function rootSelectors() {
   return rootSelectorCallbacks.map((fn) => fn());
 }
+function allSelectors() {
+  return rootSelectorCallbacks.concat(initSelectorCallbacks).map((fn) => fn());
+}
 function addRootSelector(selectorCallback) {
   rootSelectorCallbacks.push(selectorCallback);
+}
+function addInitSelector(selectorCallback) {
+  initSelectorCallbacks.push(selectorCallback);
 }
 function closestRoot(el) {
   if (rootSelectors().some((selector) => el.matches(selector)))
@@ -1959,8 +1966,18 @@ var datas = {};
 function data(name, callback) {
   datas[name] = callback;
 }
-function getNamedDataProvider(name) {
-  return datas[name];
+function injectDataProviders(obj, context) {
+  Object.entries(datas).forEach(([name, callback]) => {
+    Object.defineProperty(obj, name, {
+      get() {
+        return (...args) => {
+          return callback.bind(context)(...args);
+        };
+      },
+      enumerable: false
+    });
+  });
+  return obj;
 }
 
 // packages/alpinejs/src/alpine.js
@@ -1977,7 +1994,7 @@ var Alpine = {
   get raw() {
     return raw;
   },
-  version: "3.1.0",
+  version: "3.2.0",
   disableEffectScheduling,
   setReactivityEngine,
   addRootSelector,
@@ -1989,6 +2006,7 @@ var Alpine = {
   mutateDom,
   directive,
   evaluate,
+  initTree,
   nextTick,
   prefix: setPrefix,
   plugin,
@@ -2017,9 +2035,14 @@ magic("watch", (el) => (key, callback) => {
   effect(() => evaluate2((value) => {
     let div = document.createElement("div");
     div.dataset.throwAway = value;
-    if (!firstTime)
-      callback(value, oldValue);
-    oldValue = value;
+    if (!firstTime) {
+      queueMicrotask(() => {
+        callback(value, oldValue);
+        oldValue = value;
+      });
+    } else {
+      oldValue = value;
+    }
     firstTime = false;
   }));
 });
@@ -2039,6 +2062,8 @@ function setClasses(el, value) {
     return setClassesFromString(el, value.join(" "));
   } else if (typeof value === "object" && value !== null) {
     return setClassesFromObject(el, value);
+  } else if (typeof value === "function") {
+    return setClasses(el, value());
   }
   return setClassesFromString(el, value);
 }
@@ -2747,7 +2772,7 @@ function isNumeric2(subject) {
 directive("cloak", (el) => queueMicrotask(() => mutateDom(() => el.removeAttribute(prefix("cloak")))));
 
 // packages/alpinejs/src/directives/x-init.js
-addRootSelector(() => `[${prefix("init")}]`);
+addInitSelector(() => `[${prefix("init")}]`);
 directive("init", skipDuringClone((el, {expression}) => evaluate(el, expression, {}, false)));
 
 // packages/alpinejs/src/directives/x-text.js
@@ -2767,9 +2792,7 @@ directive("html", (el, {expression}, {effect: effect3, evaluateLater: evaluateLa
   let evaluate2 = evaluateLater2(expression);
   effect3(() => {
     evaluate2((value) => {
-      mutateDom(() => {
-        el.innerHTML = value;
-      });
+      el.innerHTML = value;
     });
   });
 });
@@ -2811,14 +2834,11 @@ function storeKeyForXFor(el, expression) {
 addRootSelector(() => `[${prefix("data")}]`);
 directive("data", skipDuringClone((el, {expression}, {cleanup}) => {
   expression = expression === "" ? "{}" : expression;
-  let dataProvider = getNamedDataProvider(expression);
-  let data2 = {};
-  if (dataProvider) {
-    let magics2 = injectMagics({}, el);
-    data2 = dataProvider.bind(magics2)();
-  } else {
-    data2 = evaluate(el, expression);
-  }
+  let magicContext = {};
+  injectMagics(magicContext, el);
+  let dataProviderContext = {};
+  injectDataProviders(dataProviderContext, magicContext);
+  let data2 = evaluate(el, expression, {scope: dataProviderContext});
   injectMagics(data2, el);
   let reactiveData = reactive(data2);
   initInterceptors(reactiveData);
@@ -2959,10 +2979,13 @@ function loop(el, iteratorNames, evaluateItems, evaluateKey) {
       let key = keys[index];
       let clone2 = document.importNode(templateEl.content, true).firstElementChild;
       addScopeToNode(clone2, reactive(scope), templateEl);
-      initTree(clone2);
       mutateDom(() => {
         lastEl.after(clone2);
+        initTree(clone2);
       });
+      if (typeof key === "object") {
+        warn("x-for key cannot be an object, it must be a string or an integer", templateEl);
+      }
       lookup[key] = clone2;
     }
     for (let i = 0; i < sames.length; i++) {
@@ -3033,8 +3056,10 @@ directive("if", (el, {expression}, {effect: effect3, cleanup}) => {
       return el._x_currentIfEl;
     let clone2 = el.content.cloneNode(true).firstElementChild;
     addScopeToNode(clone2, {}, el);
-    initTree(clone2);
-    mutateDom(() => el.after(clone2));
+    mutateDom(() => {
+      el.after(clone2);
+      initTree(clone2);
+    });
     el._x_currentIfEl = clone2;
     el._x_undoIf = () => {
       clone2.remove();
@@ -3042,7 +3067,12 @@ directive("if", (el, {expression}, {effect: effect3, cleanup}) => {
     };
     return clone2;
   };
-  let hide = () => el._x_undoIf?.() || delete el._x_undoIf;
+  let hide = () => {
+    if (!el._x_undoIf)
+      return;
+    el._x_undoIf();
+    delete el._x_undoIf;
+  };
   effect3(() => evaluate2((value) => {
     value ? show() : hide();
   }));

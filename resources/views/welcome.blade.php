@@ -1,22 +1,26 @@
 <x-app-layout>
 
     <div class="container py-8">
-        <section>
-            <h1 class="text-lg font-semibold text-gray-700 uppercase">
-                {{ $categories->first()->name }}
-            </h1>
+        @foreach ($categories as $category)
 
-            @livewire('category-products', ['category' => $categories->first()])
-        </section>
+            <section class="mb-6">
+                <h1 class="text-lg font-semibold text-gray-700 uppercase">
+                    {{ $category->name }}
+                </h1>
+
+                @livewire('category-products', ['category' => $category])
+            </section>
+
+        @endforeach
     </div>
 
 
     @push('script')
         <script>
-            //listen render event
-            Livewire.on('glider', function() {
+            //listen render event receive id from product
+            Livewire.on('glider', function(id) {
 
-                new Glider(document.querySelector('.glider'), {
+                new Glider(document.querySelector('.glider-' + id), {
                     slidesToShow: 5,
                     slidesToScroll: 5,
                     draggable: true,
