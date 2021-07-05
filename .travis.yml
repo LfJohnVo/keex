@@ -22,7 +22,6 @@ before_script:
   - rm -rf node_modules
   - rm package-lock.json
   - npm cache clear --force
-  - npm cache clean –f
   - npm install -g n
   - npm install
   - npm run dev
