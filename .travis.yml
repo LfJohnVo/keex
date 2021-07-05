@@ -1,0 +1,40 @@
+language: php
+
+php:
+  - 7.4
+  - 8.1
+
+os: linux
+
+services:
+  - mysql
+
+before_script:
+  - chmod 777 -R storage
+  - cp .env.travis .env
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
+  - mysql -e 'create database homestead_test;'
+  - php artisan migrate
+  - pear install pear/PHP_CodeSniffer
+  - phpenv rehash
+  - npm install
+  - npm run dev
+
+script:
+  - vendor/bin/phpunit --coverage-text
+  - npm run production
+
+cache:
+  directories:
+    - node_modules
+    - vendor
+
+#deploy:
+#  provider: heroku
+#  api_key:
+#    secure: KEY
+#  app: livecommerce-demo
+#  on:
+#    repo: LfJohnVo/Livecommerce
