@@ -1,4 +1,5 @@
 language: php
+languaje: node_js
 
 php:
   - 7.4
