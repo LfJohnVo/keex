@@ -1,12 +1,8 @@
 language: php
-languaje: node_js
 
 php:
   - 7.4
   #- 8.1
-
-node_js:
-  - 12
 
 os: linux
 
@@ -31,6 +27,8 @@ before_script:
 
 before_install:
   - mysql -e 'create database keex;'
+  - nvm install node
+  - node
 
 script:
   - vendor/bin/phpunit --coverage-text
