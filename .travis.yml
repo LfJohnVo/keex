@@ -23,7 +23,7 @@ before_script:
   - npm run dev
 
 before_install:
-  - mysql -e 'create database homestead_test;'
+  - mysql -e 'create database keex;'
 
 script:
   - vendor/bin/phpunit --coverage-text
