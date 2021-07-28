@@ -31,9 +31,9 @@ before_script:
 #- nvm install node
 #- node
 
-script:
-  - vendor/bin/phpunit
-  #- npm run production
+#script:
+#- vendor/bin/phpunit
+#- npm run production
 
 cache:
   directories:
