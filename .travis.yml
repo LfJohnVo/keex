@@ -1,0 +1,48 @@
+language: php
+
+dist: bionic
+
+php:
+  - 7.4
+  #- 8.1
+
+services:
+  - mysql
+
+before_script:
+  - chmod 777 -R storage
+  - cp .env.travis .env
+  - mysql -e 'create database keex'
+  - composer self-update
+  - composer install --no-interaction --prefer-source
+  - php artisan key:generate
+  #- php artisan optimize
+  - php artisan migrate
+  #- pear install pear/PHP_CodeSniffer
+  #- phpenv rehash
+  #- rm -rf node_modules
+  #- rm package-lock.json
+  #- npm cache clear --force
+  #- npm install
+  #- npm run dev
+
+#before_install:
+#- mysql -e 'create database keex;'
+#- nvm install node
+#- node
+
+#script:
+#- vendor/bin/phpunit
+#- npm run production
+
+cache:
+  directories:
+    - node_modules
+    - vendor
+#deploy:
+#  provider: heroku
+#  api_key:
+#    secure: KEY
+#  app: livecommerce-demo
+#  on:
+#    repo: LfJohnVo/Livecommerce

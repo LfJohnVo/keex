@@ -1,13 +1,33 @@
-<div wire:init="loadPosts">
-    @if (count($products))
-        <div class="glider-contain">
-            {{-- Pass Id from product to glider function --}}
-            <ul class="glider-{{ $category->id }} py-4">
+<div>
+    <div class="mb-6 bg-white rounded-lg shadow-lg">
+        <div class="flex items-center justify-between px-6 py-2">
+            <h1 class="font-semibold text-gray-700 uppercase">{{ $category->name }}</h1>
 
+            <div class="grid grid-cols-2 text-gray-500 border border-gray-200 divide-x divide-gray-200">
+                <i class="p-3 cursor-pointer fas fa-border-all"></i>
+                <i class="p-3 cursor-pointer fas fa-th-list"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <aside>
+            <h2 class="mb-2 font-semibold text-left">Subcategorías</h2>
+            <ul>
+                @foreach ($category->subcategories as $subcategory)
+                    <li class="my-2">
+                        <a href="" class="capitalize cursor-pointer hover:text-purple-400">
+                            {{ $subcategory->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </aside>
+
+        <div class="col-span-4">
+            <ul class="grid grid-cols-4 gap-6">
                 @foreach ($products as $product)
-
-                    <li
-                        class="duration-300 ease-in-out transform rounded-lg cursor-pointer w-56 hover:scale-105 {{ $loop->last ? '' : 'sm:mr-4' }}">
+                    <li class="w-56 mb-2 duration-300 ease-in-out transform rounded-lg cursor-pointer hover:scale-105">
 
                         <article>
                             <div class="p-3 bg-white shadow-md rounded-3xl">
@@ -45,8 +65,8 @@
                                                     class="mr-auto text-lg truncate cursor-pointer hover:text-gray-900 ">
                                                     {{ Str::limit($product->name, 20) }}</h2>
                                                 <!-- <div
-                                                class="flex items-center px-2 py-1 ml-3 text-xs text-white bg-green-400 rounded-lg">
-                                                IN STOCK</div> -->
+                                        class="flex items-center px-2 py-1 ml-3 text-xs text-white bg-green-400 rounded-lg">
+                                        IN STOCK</div> -->
                                             </div>
                                         </div>
                                         <div class="mt-1 text-xl font-semibold">$ {{ $product->price }}</div>
@@ -56,50 +76,19 @@
                                                 class="inline-flex px-5 py-2 mb-2 font-medium tracking-wider text-white transition duration-300 ease-in bg-indigo-500 rounded-full items-centertext-sm md:mb-0 hover:shadow-lg hover:bg-indigo-600 ">
                                                 <span>Añadir al carrito</span>
                                             </button>
-                                            <button
-                                                class="p-2 text-center text-white transition duration-300 ease-in bg-yellow-300 rounded-full hover:bg-yellow-400 hover:shadow-lg w-9 h-9">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </article>
                     </li>
-
                 @endforeach
-
             </ul>
-
-            <button aria-label="Previous" class="text-purple-600 glider-prev">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-                </svg>
-            </button>
-            <button aria-label="Next" class="text-purple-600 glider-next">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                </svg>
-            </button>
-            <div role="tablist" class="dots"></div>
-        </div>
-    @else
-        <span class="flex items-center justify-center">Cargando ...</span>
-        <div class="flex items-center justify-center h-48 mb-4 bg-white border border-gray-100 rounded-lg shadow-xl">
-            <div class="flex items-center justify-center">
-                <div class="w-20 h-20 border-t-2 border-b-2 border-purple-500 rounded-full animate-spin"></div>
+            <div class="mt-4">
+                {{ $products->links() }}
             </div>
         </div>
-    @endif
+    </div>
+
 </div>
