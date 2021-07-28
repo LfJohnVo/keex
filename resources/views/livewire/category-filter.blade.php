@@ -27,7 +27,7 @@
         <div class="col-span-4">
             <ul class="grid grid-cols-4 gap-6">
                 @foreach ($products as $product)
-                    <li class="w-56 mb-3 duration-300 ease-in-out transform rounded-lg cursor-pointer hover:scale-105">
+                    <li class="w-56 mb-2 duration-300 ease-in-out transform rounded-lg cursor-pointer hover:scale-105">
 
                         <article>
                             <div class="p-3 bg-white shadow-md rounded-3xl">

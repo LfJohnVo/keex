@@ -13,7 +13,7 @@ class CategoryFilter extends Component
 
     public function render()
     {
-        $products = $this->category->products()->where('status', 2)->paginate(16);
+        $products = $this->category->products()->where('status', 2)->paginate(12);
 
 
         return view('livewire.category-filter', compact('products'));
