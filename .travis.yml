@@ -27,8 +27,8 @@ before_script:
 
 before_install:
   - mysql -e 'create database keex;'
-  - nvm install node
-  - node
+  #- nvm install node
+  #- node
 
 script:
   - vendor/bin/phpunit --coverage-text
