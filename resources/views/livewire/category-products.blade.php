@@ -25,8 +25,10 @@
                                             </button>
                                         </div>
                                         <figure>
-                                            <img src="{{ Storage::url($product->images->first()->url) }}" alt=""
-                                                class="object-fill w-full h-full rounded-2xl">
+                                            <a href="{{ route('products.show', $product) }}">
+                                                <img src="{{ Storage::url($product->images->first()->url) }}" alt=""
+                                                    class="object-fill w-full h-full rounded-2xl">
+                                            </a>
                                         </figure>
                                     </div>
                                     <div class="flex-auto p-2 justify-evenly">
@@ -43,7 +45,10 @@
                                             <div class="flex items-center justify-between w-full min-w-0 ">
                                                 <h2
                                                     class="mr-auto text-lg truncate cursor-pointer hover:text-gray-900 ">
-                                                    {{ Str::limit($product->name, 20) }}</h2>
+                                                    <a href="{{ route('products.show', $product) }}">
+                                                        {{ Str::limit($product->name, 20) }}
+                                                    </a>
+                                                </h2>
                                                 <!-- <div
                                                 class="flex items-center px-2 py-1 ml-3 text-xs text-white bg-green-400 rounded-lg">
                                                 IN STOCK</div> -->
@@ -56,7 +61,7 @@
                                                 class="inline-flex px-5 py-2 mb-2 font-medium tracking-wider text-white transition duration-300 ease-in bg-indigo-500 rounded-full items-centertext-sm md:mb-0 hover:shadow-lg hover:bg-indigo-600 ">
                                                 <span>Añadir al carrito</span>
                                             </button>
-                                            <button
+                                            <a href="{{ route('products.show', $product) }}"
                                                 class="p-2 text-center text-white transition duration-300 ease-in bg-yellow-300 rounded-full hover:bg-yellow-400 hover:shadow-lg w-9 h-9">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +71,7 @@
                                                         stroke-width="2"
                                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                 </svg>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
