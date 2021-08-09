@@ -8,7 +8,8 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function show(Product $product){
+    public function show(Product $product)
+    {
         return view('products.show', compact('product'));
     }
 }

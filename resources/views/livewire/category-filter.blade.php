@@ -65,8 +65,10 @@
                                                 </button>
                                             </div>
                                             <figure>
-                                                <img src="{{ Storage::url($product->images->first()->url) }}" alt=""
-                                                    class="object-fill w-full h-full rounded-2xl">
+                                                <a href="{{ route('products.show', $product) }}">
+                                                    <img src="{{ Storage::url($product->images->first()->url) }}"
+                                                        alt="" class="object-fill w-full h-full rounded-2xl">
+                                                </a>
                                             </figure>
                                         </div>
                                         <div class="flex-auto p-2 justify-evenly">
@@ -83,7 +85,10 @@
                                                 <div class="flex items-center justify-between w-full min-w-0 ">
                                                     <h2
                                                         class="mr-auto text-lg truncate cursor-pointer hover:text-gray-900 ">
-                                                        {{ Str::limit($product->name, 20) }}</h2>
+                                                        <a href="{{ route('products.show', $product) }}">
+                                                            {{ Str::limit($product->name, 20) }}
+                                                        </a>
+                                                    </h2>
                                                     <!-- <div
                                         class="flex items-center px-2 py-1 ml-3 text-xs text-white bg-green-400 rounded-lg">
                                         IN STOCK</div> -->
@@ -112,16 +117,20 @@
                             class="mb-4 duration-300 ease-in-out transform bg-white rounded-lg shadow cursor-pointer hover:scale-105">
                             <article class="flex p-3 rounded-3xl">
                                 <figure>
-                                    <img class="object-cover object-center w-56 h-48"
-                                        src="{{ Storage::url($product->images->first()->url) }}"
-                                        alt="{{ $product->name }}">
+                                    <a href="{{ route('products.show', $product) }}">
+                                        <img class="object-cover object-center w-56 h-48"
+                                            src="{{ Storage::url($product->images->first()->url) }}"
+                                            alt="{{ $product->name }}">
+                                    </a>
                                 </figure>
 
                                 <div class="flex-col flex-1 px-6 py-4 bg-gray-50">
                                     <div class="flex justify-between">
                                         <div>
-                                            <h1 class="text-lg font-semibold">{{ $product->name }}
-                                            </h1>
+                                            <a href="{{ route('products.show', $product) }}">
+                                                <h1 class="text-lg font-semibold">{{ $product->name }}
+                                                </h1>
+                                            </a>
                                             <p class="font-semibold">$ {{ $product->price }}</p>
                                         </div>
                                         <div class="flex items-center">
@@ -146,10 +155,10 @@
                                         </div>
                                     </div>
 
-                                    <div class="mt-auto mb-8">
-                                        <x-jet-danger-button>
+                                    <div class="py-4 mt-auto mb-8">
+                                        <x-danger-enlace href="{{ route('products.show', $product) }}">
                                             Más información
-                                        </x-jet-danger-button>
+                                        </x-danger-enlace>
                                     </div>
                                 </div>
                             </article>

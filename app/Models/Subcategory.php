@@ -28,6 +28,9 @@ class Subcategory extends Model
         return $this->belongsTo(Category::class);
     }
 
-    //
+    //URLS
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 
 }

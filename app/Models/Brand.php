@@ -25,4 +25,8 @@ class Brand extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    //URLS
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }
