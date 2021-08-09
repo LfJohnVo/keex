@@ -13,6 +13,8 @@ class CategoryFilter extends Component
 
     public $category, $subcategoria, $marca;
 
+    public $view = "grid";
+
     public function render()
     {
         /*$products = $this->category->products()->where('status', 2)->paginate(12);*/
