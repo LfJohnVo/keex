@@ -12,16 +12,30 @@
 
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         <aside>
-            <h2 class="mb-2 font-semibold text-left">Subcategorías</h2>
-            <ul>
+            <h2 class="mb-2 font-semibold text-left"><i class="fas fa-tasks"></i> Subcategorías</h2>
+            <ul class="divide-y divide-purple-200">
                 @foreach ($category->subcategories as $subcategory)
-                    <li class="my-2">
-                        <a href="" class="capitalize cursor-pointer hover:text-purple-400">
+                    <li class="py-2">
+                        <a class="capitalize cursor-pointer hover:text-purple-400 {{ $subcategoria == $subcategory->name ? 'text-purple-600 font-semibold' : ''}}" wire:click="$set('subcategoria', '{{ $subcategory->name }}')">
                             {{ $subcategory->name }}
                         </a>
                     </li>
                 @endforeach
             </ul>
+            <h2 class="mt-4 mb-2 font-semibold text-left"><i class="fas fa-copyright"></i> Marcas</h2>
+            <ul class="divide-y divide-gray-200">
+                @foreach ($category->brands as $brand)
+                    <li class="py-2">
+                        <a class="capitalize cursor-pointer hover:text-purple-400 {{ $marca == $brand->name ? 'text-purple-600 font-semibold' : ''}}" wire:click="$set('marca', '{{ $brand->name }}')">
+                            {{ $brand->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+
+            <x-jet-button class="mt-4" wire:click="limpiar">
+                Eliminar filtros
+            </x-jet-button>
         </aside>
 
         <div class="col-span-4">
