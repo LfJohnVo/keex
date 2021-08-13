@@ -20,7 +20,7 @@
         <!-- Settings Dropdown -->
         <div class="relative hidden mx-6 md:block">
             @auth
-                <dropdown-nav align="right" width="48">
+                <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
                             class="flex text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
@@ -58,7 +58,7 @@
                             </x-jet-dropdown-link>
                         </form>
                     </x-slot>
-                </dropdown-nav>
+                </x-jet-dropdown>
             @else
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
