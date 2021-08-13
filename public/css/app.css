@@ -1087,6 +1087,9 @@ select {
 .prose > :last-child {
 	margin-bottom: 0;
 }
+.pointer-events-none {
+	pointer-events: none;
+}
 .fixed {
 	position: fixed;
 }
@@ -1120,6 +1123,9 @@ select {
 .z-50 {
 	z-index: 50;
 }
+.z-20 {
+	z-index: 20;
+}
 .order-last {
 	order: 9999;
 }
@@ -1128,6 +1134,15 @@ select {
 }
 .col-span-3 {
 	grid-column: span 3 / span 3;
+}
+.col-start-1 {
+	grid-column-start: 1;
+}
+.row-start-2 {
+	grid-row-start: 2;
+}
+.row-start-1 {
+	grid-row-start: 1;
 }
 .m-auto {
 	margin: auto;
@@ -1144,6 +1159,10 @@ select {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 }
+.my-4 {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
 .my-3 {
 	margin-top: 0.75rem;
 	margin-bottom: 0.75rem;
@@ -1155,10 +1174,6 @@ select {
 .mx-2 {
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
-}
-.my-4 {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
 }
 .ml-3 {
 	margin-left: 0.75rem;
@@ -1241,9 +1256,6 @@ select {
 .mb-2 {
 	margin-bottom: 0.5rem;
 }
-.mb-10 {
-	margin-bottom: 2.5rem;
-}
 .mr-1 {
 	margin-right: 0.25rem;
 }
@@ -1307,6 +1319,9 @@ select {
 .h-full {
 	height: 100%;
 }
+.h-auto {
+	height: auto;
+}
 .h-2 {
 	height: 0.5rem;
 }
@@ -1315,9 +1330,6 @@ select {
 }
 .h-80 {
 	height: 20rem;
-}
-.h-auto {
-	height: auto;
 }
 .min-h-screen {
 	min-height: 100vh;
@@ -1370,14 +1382,17 @@ select {
 .w-9 {
 	width: 2.25rem;
 }
+.w-3\/5 {
+	width: 60%;
+}
 .w-2 {
 	width: 0.5rem;
 }
-.w-1\/2 {
-	width: 50%;
-}
 .w-56 {
 	width: 14rem;
+}
+.w-1\/2 {
+	width: 50%;
 }
 .min-w-0 {
 	min-width: 0px;
@@ -1431,6 +1446,14 @@ select {
 	--tw-translate-y: -50%;
 	transform: var(--tw-transform);
 }
+.translate-y-12 {
+	--tw-translate-y: 3rem;
+	transform: var(--tw-transform);
+}
+.-translate-y-12 {
+	--tw-translate-y: -3rem;
+	transform: var(--tw-transform);
+}
 .scale-95 {
 	--tw-scale-x: .95;
 	--tw-scale-y: .95;
@@ -1439,6 +1462,11 @@ select {
 .scale-100 {
 	--tw-scale-x: 1;
 	--tw-scale-y: 1;
+	transform: var(--tw-transform);
+}
+.scale-90 {
+	--tw-scale-x: .9;
+	--tw-scale-y: .9;
 	transform: var(--tw-transform);
 }
 .transform {
@@ -1484,6 +1512,9 @@ select {
 .cursor-pointer {
 	cursor: pointer;
 }
+.resize {
+	resize: both;
+}
 .list-inside {
 	list-style-position: inside;
 }
@@ -1501,6 +1532,9 @@ select {
 }
 .grid-cols-2 {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-rows-1 {
+	grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 .flex-row {
 	flex-direction: row;
@@ -1735,13 +1769,9 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
 }
-.bg-purple-800 {
+.bg-green-600 {
 	--tw-bg-opacity: 1;
-	background-color: rgba(91, 33, 182, var(--tw-bg-opacity));
-}
-.bg-purple-400 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(167, 139, 250, var(--tw-bg-opacity));
+	background-color: rgba(5, 150, 105, var(--tw-bg-opacity));
 }
 .bg-green-400 {
 	--tw-bg-opacity: 1;
@@ -1750,10 +1780,6 @@ select {
 .bg-yellow-300 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(252, 211, 77, var(--tw-bg-opacity));
-}
-.bg-green-600 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(5, 150, 105, var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
@@ -1766,9 +1792,6 @@ select {
 }
 .bg-center {
 	background-position: center;
-}
-.bg-top {
-	background-position: top;
 }
 .fill-current {
 	fill: currentColor;
@@ -1791,14 +1814,14 @@ select {
 .p-6 {
 	padding: 1.5rem;
 }
-.p-5 {
-	padding: 1.25rem;
+.p-4 {
+	padding: 1rem;
 }
 .p-3 {
 	padding: 0.75rem;
 }
-.p-4 {
-	padding: 1rem;
+.p-5 {
+	padding: 1.25rem;
 }
 .px-4 {
 	padding-left: 1rem;
@@ -1860,18 +1883,6 @@ select {
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 }
-.px-10 {
-	padding-left: 2.5rem;
-	padding-right: 2.5rem;
-}
-.py-24 {
-	padding-top: 6rem;
-	padding-bottom: 6rem;
-}
-.px-8 {
-	padding-left: 2rem;
-	padding-right: 2rem;
-}
 .pt-6 {
 	padding-top: 1.5rem;
 }
@@ -1908,14 +1919,14 @@ select {
 .pr-10 {
 	padding-right: 2.5rem;
 }
+.pb-2 {
+	padding-bottom: 0.5rem;
+}
 .pt-10 {
 	padding-top: 2.5rem;
 }
 .pb-5 {
 	padding-bottom: 1.25rem;
-}
-.pb-2 {
-	padding-bottom: 0.5rem;
 }
 .text-left {
 	text-align: left;
@@ -1960,6 +1971,10 @@ select {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
 }
+.text-5xl {
+	font-size: 3rem;
+	line-height: 1;
+}
 .font-medium {
 	font-weight: 500;
 }
@@ -1968,6 +1983,9 @@ select {
 }
 .font-bold {
 	font-weight: 700;
+}
+.font-black {
+	font-weight: 900;
 }
 .uppercase {
 	text-transform: uppercase;
@@ -2072,6 +2090,10 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(254, 226, 226, var(--tw-text-opacity));
 }
+.text-yellow-400 {
+	--tw-text-opacity: 1;
+	color: rgba(251, 191, 36, var(--tw-text-opacity));
+}
 .text-purple-600 {
 	--tw-text-opacity: 1;
 	color: rgba(124, 58, 237, var(--tw-text-opacity));
@@ -2079,10 +2101,6 @@ select {
 .text-blue-500 {
 	--tw-text-opacity: 1;
 	color: rgba(59, 130, 246, var(--tw-text-opacity));
-}
-.text-yellow-400 {
-	--tw-text-opacity: 1;
-	color: rgba(251, 191, 36, var(--tw-text-opacity));
 }
 .underline {
 	text-decoration: underline;
@@ -2242,10 +2260,6 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(167, 139, 250, var(--tw-bg-opacity));
 }
-.hover\:bg-gray-200:hover {
-	--tw-bg-opacity: 1;
-	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
-}
 .hover\:bg-yellow-400:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(251, 191, 36, var(--tw-bg-opacity));
@@ -2278,13 +2292,9 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
-.hover\:text-gray-100:hover {
+.hover\:text-purple-500:hover {
 	--tw-text-opacity: 1;
-	color: rgba(243, 244, 246, var(--tw-text-opacity));
-}
-.hover\:text-blue-400:hover {
-	--tw-text-opacity: 1;
-	color: rgba(96, 165, 250, var(--tw-text-opacity));
+	color: rgba(139, 92, 246, var(--tw-text-opacity));
 }
 .hover\:text-purple-400:hover {
 	--tw-text-opacity: 1;
@@ -2294,9 +2304,13 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(99, 102, 241, var(--tw-text-opacity));
 }
-.hover\:text-purple-500:hover {
+.hover\:text-gray-100:hover {
 	--tw-text-opacity: 1;
-	color: rgba(139, 92, 246, var(--tw-text-opacity));
+	color: rgba(243, 244, 246, var(--tw-text-opacity));
+}
+.hover\:text-blue-400:hover {
+	--tw-text-opacity: 1;
+	color: rgba(96, 165, 250, var(--tw-text-opacity));
 }
 .hover\:underline:hover {
 	text-decoration: underline;
@@ -2660,10 +2674,6 @@ select {
 
 	.md\:w-3\/12 {
 		width: 25%;
-	}
-
-	.md\:w-1\/2 {
-		width: 50%;
 	}
 
 	.md\:flex-auto {

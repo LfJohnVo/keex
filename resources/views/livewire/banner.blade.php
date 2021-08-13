@@ -1,119 +1,77 @@
 <style>
-    .bannerCard {
-        height: 325px;
+    .flickity-viewport {
+        height: 300px !important;
+        width: 100%;
     }
 
 </style>
+<div wire:init="loadPosts">
 
-<div>
+    <div class="flex items-center justify-center w-full h-auto mt-2 text-white bg-center bg-cover"
+        x-data="carouselFilter()">
+        <div class="container grid grid-cols-1">
+            <div class="col-start-1 row-start-2" x-show="active == 0"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform scale-90"
+                x-transition:enter-end="opacity-100 transform scale-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 transform scale-100"
+                x-transition:leave-end="opacity-0 transform scale-90">
+                <div class="grid grid-cols-1 grid-rows-1" x-data="carousel()" x-init="init()">
+                    <div
+                        class="relative z-20 flex items-center justify-center col-start-1 row-start-1 pointer-events-none">
 
-    <div class="h-auto sliderAx bannerCard">
-        <div id="slider-1" class="mx-auto">
-            <div class="object-fill h-auto px-10 py-24 text-white bg-center bg-cover bannerCard"
-                style="background-image: url(https://images.unsplash.com/photo-1544427920-c49ccfb85579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1422&q=80)">
-                <div class="md:w-1/2">
-                    <div class="container md:w-1/2">
-                        <p class="text-sm font-bold uppercase">Services</p>
-                        <p class="text-3xl font-bold">Hello world</p>
-                        <p class="mb-10 text-2xl leading-none">Carousel with TailwindCSS and jQuery</p>
-                        <a href="#"
-                            class="px-8 py-4 text-xs font-bold text-white uppercase bg-purple-800 rounded hover:bg-gray-200 hover:text-gray-800">Contact
-                            us</a>
+                        <h1 class="absolute text-5xl font-black tracking-widest uppercase" x-show="active == 0"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform translate-y-12"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-out duration-300"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-12">Dragon Fruit</h1>
+                        <h1 class="absolute text-5xl font-black tracking-widest uppercase" x-show="active == 1"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform translate-y-12"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-out duration-300"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-12">Avocado</h1>
+                        <h1 class="absolute text-5xl font-black tracking-widest uppercase" x-show="active == 2"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform translate-y-12"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-out duration-300"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-12">Mango</h1>
+                        <h1 class="absolute text-5xl font-black tracking-widest uppercase" x-show="active == 3"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform translate-y-12"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-out duration-300"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-12">Orange</h1>
+                    </div>
+
+
+                    <div class="col-start-1 row-start-1 carousel" x-ref="carousel">
+                        <div class="w-3/5 px-2">
+                            <img src="https://images.unsplash.com/photo-1581375221876-8f287f7cd2cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=770&q=80"
+                                loading="lazy">
+                        </div>
+                        <div class="w-3/5 px-2">
+                            <img src="https://images.unsplash.com/photo-1581375279144-bb3b381c7046?ixlib=rb-1.2.1&auto=format&fit=crop&w=770&q=80"
+                                loading="lazy">
+                        </div>
+                        <div class="w-3/5 px-2">
+                            <img src="https://images.unsplash.com/photo-1581375303816-4a17124934f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=770&q=80"
+                                loading="lazy">
+                        </div>
+                        <div class="w-3/5 px-2">
+                            <img src="https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&auto=format&fit=crop&w=770&q=80"
+                                loading="lazy">
+                        </div>
                     </div>
                 </div>
-            </div> <!-- container -->
-            <br>
+            </div>
         </div>
-
-        <div id="slider-2" class="mx-auto">
-            <div class="object-fill h-auto px-10 py-24 text-white bg-top bg-cover bannerCard"
-                style="background-image: url(https://images.unsplash.com/photo-1544144433-d50aff500b91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
-                <div class="container">
-                    <p class="text-sm font-bold uppercase">Services</p>
-                    <p class="text-3xl font-bold">Hello world</p>
-                    <p class="mb-10 text-2xl leading-none">Carousel with TailwindCSS and jQuery</p>
-                    <a href="#"
-                        class="px-8 py-4 text-xs font-bold text-white uppercase bg-purple-800 rounded hover:bg-gray-200 hover:text-gray-800">Contact
-                        us</a>
-                </div>
-            </div> <!-- container -->
-            <br>
-        </div>
-    </div>
-    <div class="flex justify-between w-12 pb-2 mx-auto">
-        <button id="sButton1" onclick="sliderButton1()" class="w-4 pb-2 bg-purple-400 rounded-full "></button>
-        <button id="sButton2" onclick="sliderButton2() " class="w-4 p-2 bg-purple-400 rounded-full"></button>
     </div>
 </div>
-
-
-<script>
-    var cont = 0;
-
-    function loopSlider() {
-        var xx = setInterval(function() {
-            switch (cont) {
-                case 0: {
-                    $("#slider-1").fadeOut(400);
-                    $("#slider-2").delay(400).fadeIn(400);
-                    $("#sButton1").removeClass("bg-purple-800");
-                    $("#sButton2").addClass("bg-purple-800");
-                    cont = 1;
-
-                    break;
-                }
-                case 1: {
-
-                    $("#slider-2").fadeOut(400);
-                    $("#slider-1").delay(400).fadeIn(400);
-                    $("#sButton2").removeClass("bg-purple-800");
-                    $("#sButton1").addClass("bg-purple-800");
-
-                    cont = 0;
-
-                    break;
-                }
-
-
-            }
-        }, 4000);
-
-    }
-
-    function reinitLoop(time) {
-        clearInterval(xx);
-        setTimeout(loopSlider(), time);
-    }
-
-
-
-    function sliderButton1() {
-
-        $("#slider-2").fadeOut(400);
-        $("#slider-1").delay(400).fadeIn(400);
-        $("#sButton2").removeClass("bg-purple-800");
-        $("#sButton1").addClass("bg-purple-800");
-        reinitLoop(4000);
-        cont = 0
-
-    }
-
-    function sliderButton2() {
-        $("#slider-1").fadeOut(400);
-        $("#slider-2").delay(400).fadeIn(400);
-        $("#sButton1").removeClass("bg-purple-800");
-        $("#sButton2").addClass("bg-purple-800");
-        reinitLoop(4000);
-        cont = 1
-
-    }
-
-    $(window).ready(function() {
-        $("#slider-2").hide();
-        $("#sButton1").addClass("bg-purple-800");
-
-
-        loopSlider();
-
-    });
-</script>
