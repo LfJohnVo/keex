@@ -56,6 +56,11 @@
 
     @livewireScripts
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    </script>
+
+    <x-livewire-alert::scripts />
+
     <script>
         //hamburguer menu
         function dropdown() {
