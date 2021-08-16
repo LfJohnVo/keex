@@ -14,6 +14,12 @@
 
                     </ul>
                 </div>
+
+                <div class="-mt-10 text-gray-700">
+                    <h2 class="text-lg font-bold">Descripción</h2>
+                    {!!$product->description!!}
+                </div>
+
             </div>
 
             <div>
