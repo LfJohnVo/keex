@@ -2,6 +2,7 @@
 
     @livewire('banner')
     <link href="https://unpkg.com/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
 
     <div class="container py-8">
 
@@ -12,7 +13,8 @@
                     <h1 class="py-1 text-lg font-semibold text-gray-700 uppercase ">
                         {{ $category->name }}
                     </h1>
-                    <a class="ml-2 font-semibold text-blue-500 hover:text-blue-400 hover:underline" href="{{ route('categories.show', $category) }}">Ver más</a>
+                    <a class="ml-2 font-semibold text-blue-500 hover:text-blue-400 hover:underline"
+                        href="{{ route('categories.show', $category) }}">Ver más</a>
 
                 </div>
                 @livewire('category-products', ['category' => $category])
@@ -22,48 +24,11 @@
     </div>
 
 
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     @push('script')
         <script>
             //listen render event receive id from product
             Livewire.on('glider', function(id) {
-
-                //banner
-                $(document).ready(function() {
-                    new Glider(document.querySelector('.banner'), {
-                        draggable: true,
-                    });
-
-                    const banner = new Glider(document.querySelector('.banner'));
-
-                    function sliderAuto(slider, miliseconds) {
-                        const slidesCount = slider.track.childElementCount;
-                        let slideTimeout = null;
-                        let nextIndex = 1;
-
-                        function slide() {
-                            slideTimeout = setTimeout(
-                                function() {
-                                    if (nextIndex >= slidesCount) {
-                                        nextIndex = 0;
-                                    }
-                                    slider.scrollItem(nextIndex++);
-                                },
-                                miliseconds
-                            );
-                        }
-
-                        slider.ele.addEventListener('glider-animated', function() {
-                            window.clearInterval(slideTimeout);
-                            slide();
-                        });
-
-                        slide();
-                    }
-
-                    sliderAuto(banner, 3000)
-
-                });
-
                 //sliders
                 new Glider(document.querySelector('.glider-' + id), {
                     slidesToShow: 1,
@@ -106,6 +71,39 @@
                 });
 
             });
+
+            //banner
+            function carousel() {
+                return {
+                    active: 0,
+                    init() {
+                        var flkty = new Flickity(this.$refs.carousel, {
+                            wrapAround: true,
+                            autoPlay: 2000,
+                            pauseAutoPlayOnHover: false,
+                            fullscreen: true,
+                            fade: true,
+                        });
+                        flkty.on('change', i => this.active = i);
+                    }
+                }
+            }
+
+            function carouselFilter() {
+                return {
+                    active: 0,
+                    changeActive(i) {
+                        this.active = i;
+
+                        this.$nextTick(() => {
+                            let flkty = Flickity.data(this.$el.querySelectorAll('.carousel')[i]);
+                            //flkty.resize();
+
+                            //console.log(flkty);
+                        });
+                    }
+                }
+            }
         </script>
     @endpush
 

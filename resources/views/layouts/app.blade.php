@@ -56,6 +56,11 @@
 
     @livewireScripts
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    </script>
+
+    <x-livewire-alert::scripts />
+
     <script>
         //hamburguer menu
         function dropdown() {
@@ -65,16 +70,16 @@
                     if (this.open) {
                         //se cierra el menu
                         this.open = false;
-                        document.getElemntByTagName('html')[0].style.oveflow = 'auto';
+                        document.getElementsByTagName('html')[0].style.oveflow = 'auto';
                     } else {
                         //se abre
                         this.open = true;
-                        document.getElemntByTagName('html')[0].style.oveflow = 'hidden';
+                        document.getElementsByTagName('html')[0].style.oveflow = 'hidden';
                     }
                 },
                 close() {
                     this.open = false;
-                    document.getElemntByTagName('html')[0].style.oveflow = 'auto';
+                    document.getElementsByTagName('html')[0].style.oveflow = 'auto';
                 }
             }
         }

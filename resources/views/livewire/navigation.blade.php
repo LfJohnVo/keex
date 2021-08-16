@@ -51,8 +51,9 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                                        this.closest('form').submit();">
+                            <x-jet-dropdown-link href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                                                            this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-jet-dropdown-link>
                         </form>
@@ -82,15 +83,17 @@
 
     </div>
 
-    <nav id="navigation-menu" x-show="open" class="absolute w-full bg-black bg-opacity-25">
+    <nav id="navigation-menu" :class="{'block' : open, 'hidden': !open}"
+        class="absolute hidden w-full bg-black bg-opacity-25">
         {{-- Menu para computadoras --}}
-        <div class="container hidden h-full md:block">
+        <div class="container h-full md:block">
             {{-- Menu a mostrar durante el hover --}}
             <div x-on:click.away="close()" class="relative grid h-full grid-cols-4">
                 <ul class="bg-white text-black-600">
                     @foreach ($categories as $category)
                         <li class="navigation-link hover:bg-purple-400 hover:text-white">
-                            <a class="flex items-center px-4 py-2 text-sm" href="{{ route('categories.show', $category) }}">
+                            <a class="flex items-center px-4 py-2 text-sm"
+                                href="{{ route('categories.show', $category) }}">
                                 <span class="flex justify-center w-9">
                                     {!! $category->icon !!}
                                 </span>
@@ -124,7 +127,8 @@
             <ul>
                 @foreach ($categories as $category)
                     <li class="hover:bg-purple-400 hover:text-white">
-                        <a class="flex items-center px-4 py-2 text-sm " href="{{ route('categories.show', $category) }}">
+                        <a class="flex items-center px-4 py-2 text-sm "
+                            href="{{ route('categories.show', $category) }}">
                             <span class="flex justify-center w-9">
                                 {!! $category->icon !!}
                             </span>
@@ -135,47 +139,57 @@
                 @endforeach
             </ul>
 
-            <p class="px-6 my-2 text-gray-500">USUARIOS</p>
+            <p class="px-6 my-2 text-trueGray-500">USUARIOS</p>
+
             @livewire('cart-mobile')
+
             @auth
                 <a href="{{ route('profile.show') }}"
-                    class="flex items-center px-4 py-2 text-sm hover:bg-purple-400 hover:text-white" href="">
+                    class="flex items-center px-4 py-2 text-sm text-trueGray-500 hover:bg-orange-500 hover:text-white">
+
                     <span class="flex justify-center w-9">
-                        <i class="fas fa-user-circle"></i>
+                        <i class="far fa-address-card"></i>
                     </span>
+
                     Perfil
                 </a>
 
                 <a href="" onclick="event.preventDefault();
-                                    document.getElementById('logout-from').submit()"
-                    class="flex items-center px-4 py-2 text-sm hover:bg-purple-400 hover:text-white" href="">
+                                document.getElementById('logout-form').submit() "
+                    class="flex items-center px-4 py-2 text-sm text-trueGray-500 hover:bg-orange-500 hover:text-white">
+
                     <span class="flex justify-center w-9">
                         <i class="fas fa-sign-out-alt"></i>
                     </span>
+
                     Cerrar sesión
                 </a>
 
-                <form id="logout-from" action="{{ route('logout') }}" method="POST" class="hidden">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                     @csrf
                 </form>
+
             @else
                 <a href="{{ route('login') }}"
-                    class="flex items-center px-4 py-2 text-sm hover:bg-purple-400 hover:text-white" href="">
+                    class="flex items-center px-4 py-2 text-sm text-trueGray-500 hover:bg-orange-500 hover:text-white">
+
                     <span class="flex justify-center w-9">
                         <i class="fas fa-user-circle"></i>
                     </span>
+
                     Iniciar sesión
                 </a>
 
                 <a href="{{ route('register') }}"
-                    class="flex items-center px-4 py-2 text-sm hover:bg-purple-400 hover:text-white" href="">
+                    class="flex items-center px-4 py-2 text-sm text-trueGray-500 hover:bg-orange-500 hover:text-white">
+
                     <span class="flex justify-center w-9">
                         <i class="fas fa-fingerprint"></i>
                     </span>
-                    Registrate
+
+                    registrate
                 </a>
             @endauth
-
         </div>
         {{-- menu movil --}}
     </nav>

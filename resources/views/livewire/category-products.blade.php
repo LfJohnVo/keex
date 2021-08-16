@@ -1,4 +1,4 @@
-<div wire:init="loadPosts">
+<div wire:init="loadPosts" x-data>
     @if (count($products))
         <div class="glider-contain">
             {{-- Pass Id from product to glider function --}}
@@ -57,20 +57,22 @@
                                         <div class="mt-1 text-xl font-semibold">$ {{ $product->price }}</div>
                                         <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
                                         <div class="flex justify-center space-x-2 text-sm font-medium">
-                                            <button
+                                            {{-- <button wire:click="addItem({{$product}})" wire:loading.attr="disabled"
+                                                wire:target="addItem"
                                                 class="inline-flex px-5 py-2 mb-2 font-medium tracking-wider text-white transition duration-300 ease-in bg-indigo-500 rounded-full items-centertext-sm md:mb-0 hover:shadow-lg hover:bg-indigo-600 ">
                                                 <span>Añadir al carrito</span>
-                                            </button>
+                                            </button> --}}
                                             <a href="{{ route('products.show', $product) }}"
-                                                class="p-2 text-center text-white transition duration-300 ease-in bg-yellow-300 rounded-full hover:bg-yellow-400 hover:shadow-lg w-9 h-9">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none"
+                                                class="inline-flex px-5 py-2 mb-2 font-medium tracking-wider text-white transition duration-300 ease-in bg-indigo-500 rounded-full items-centertext-sm md:mb-0 hover:shadow-lg hover:bg-indigo-600 ">Ver
+                                                producto
+                                                {{-- <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
                                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
+                                                </svg> --}}
                                             </a>
                                         </div>
                                     </div>
