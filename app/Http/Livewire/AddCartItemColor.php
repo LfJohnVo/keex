@@ -19,38 +19,45 @@ class AddCartItemColor extends Component
         'size_id' => null
     ];
 
-    public function mount(){
+    public function mount()
+    {
         $this->colors = $this->product->colors;
         $this->options['image'] = Storage::url($this->product->images->first()->url);
     }
 
-    public function updatedColorId($value){
+    public function updatedColorId($value)
+    {
         $color = $this->product->colors->find($value);
-        //$this->quantity = qty_available($this->product->id, $color->id);
+        $this->quantity = qty_available($this->product->id, $color->id);
         $this->options['color'] = $color->name;
         $this->options['color_id'] = $color->id;
     }
 
-    public function decrement(){
+    public function decrement()
+    {
         $this->qty = $this->qty - 1;
     }
 
-    public function increment(){
+    public function increment()
+    {
         $this->qty = $this->qty + 1;
     }
 
-    public function addItem(){
-        Cart::add([ 'id' => $this->product->id,
-                    'name' => $this->product->name,
-                    'qty' => $this->qty,
-                    'price' => $this->product->price,
-                    'weight' => 550,
-                    'options' => $this->options
-                ]);
+    public function addItem()
+    {
+        Cart::add([
+            'id' => $this->product->id,
+            'name' => $this->product->name,
+            'qty' => $this->qty,
+            'price' => $this->product->price,
+            'weight' => 550,
+            'options' => $this->options
+        ]);
 
-        //$this->quantity = qty_available($this->product->id, $this->color_id);
+        $this->quantity = qty_available($this->product->id, $this->color_id);
 
         $this->reset('qty');
+        $this->added($this->product->name, $this->qty);
 
         $this->emitTo('dropdown-cart', 'render');
     }
@@ -59,5 +66,19 @@ class AddCartItemColor extends Component
     public function render()
     {
         return view('livewire.add-cart-item-color');
+    }
+
+    public function added($value, $qty)
+    {
+        $this->alert('success', $qty . ' ' . $value . ' añadido al carrito', [
+            'position' =>  'bottom-end',
+            'timer' =>  '2000',
+            'toast' =>  true,
+            'text' =>  '',
+            'confirmButtonText' =>  'OK',
+            'cancelButtonText' =>  '',
+            'showCancelButton' =>  false,
+            'showConfirmButton' =>  false,
+        ]);
     }
 }

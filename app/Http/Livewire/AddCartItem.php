@@ -10,11 +10,13 @@ class AddCartItem extends Component
 {
     public $product, $quantity;
     public $qty = 1;
-    public $options = [];
+    public $options = [
+        'color_id' => null,
+        'size_id' => null
+    ];
 
-    public function mount()
-    {
-        $this->quantity = $this->product->quantity;
+    public function mount(){
+        $this->quantity = qty_available($this->product->id);
         $this->options['image'] = Storage::url($this->product->images->first()->url);
     }
 
@@ -39,7 +41,10 @@ class AddCartItem extends Component
             'options' => $this->options
         ]);
 
+        $this->quantity = qty_available($this->product->id);
+
         $this->added($this->product->name, $this->qty);
+        $this->reset('qty');
         //emit event to specific component
         $this->emitTo('dropdown-cart', 'render');
     }
@@ -59,7 +64,7 @@ class AddCartItem extends Component
             'confirmButtonText' =>  'OK',
             'cancelButtonText' =>  '',
             'showCancelButton' =>  false,
-            'showConfirmButton' =>  true,
+            'showConfirmButton' =>  false,
         ]);
     }
 }
