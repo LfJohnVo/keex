@@ -14,13 +14,20 @@
         <select class="w-full bg-white rounded-lg shadow-xl" wire:model="color_id">
             <option value="" selected disabled>Seleccione una color</option>
             @foreach ($colors as $color)
-                <option class="capitalize" value="{{ $color->id }}">{{ $color->name }}</option>
+                <option class="capitalize" value="{{ $color->id }}">{{ __($color->name) }}</option>
             @endforeach
         </select>
     </div>
 
-    <p class="my-4 mb-4 text-gray-700">
-        <span class="text-lg font-semibold">Stock disponible:</span> {{ $product->stock }}
+    <p class="my-4 text-gray-700">
+        <span class="text-lg font-semibold">Stock disponible:</span>
+
+        @if ($quantity)
+            {{$quantity}}
+        @else
+            {{$product->stock}}
+        @endif
+
     </p>
 
     <div class="flex">
