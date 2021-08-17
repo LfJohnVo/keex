@@ -9,7 +9,7 @@
                 @else
                     <span
                         class="absolute top-0 right-0 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full "></span>
-                </span>
+            </span>
             @endif
         </x-slot>
         <x-slot name="content">
@@ -19,7 +19,16 @@
                         <img class="object-cover w-20 mr-4 h-15" src="{{ $item->options->image }}" alt="">
                         <article class="flex-1">
                             <h1 class="font-bold">{{ $item->name }}</h1>
-                            <p class="font-bold">Cant:{{ $item->qty }}</p>
+                            <div class="flex">
+                                <p class="font-bold">Cant:{{ $item->qty }}</p>
+                                @isset($item->options['color'])
+                                    <p class="mx-2">Color: {{ __($item->options['color']) }}</p>
+                                @endisset
+
+                                @isset($item->options['size'])
+                                    <p class="mx-2">Talla: {{ __($item->options['size']) }}</p>
+                                @endisset
+                            </div>
                             <p class="font-bold">${{ $item->price }}</p>
                         </article>
                     </li>
