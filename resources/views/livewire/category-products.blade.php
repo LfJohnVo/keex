@@ -11,7 +11,7 @@
 
                         <article>
                             <div class="p-3 bg-white shadow-md rounded-3xl">
-                                <div class="">
+                                <div class="___class_+?4___">
                                     <div class="relative w-full mb-3 h-62 lg:mb-0">
                                         <div class="absolute top-0 right-0 flex flex-col p-3">
                                             <button
