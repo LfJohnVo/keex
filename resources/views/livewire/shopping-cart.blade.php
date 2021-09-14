@@ -192,7 +192,7 @@
                 </div>
 
                 <div>
-                    <x-button-enlace class="px-4 py-2">
+                    <x-button-enlace class="px-4 py-2" href="{{route('orders.create')}}">
                         Comprar
                     </x-button-enlace>
                 </div>
