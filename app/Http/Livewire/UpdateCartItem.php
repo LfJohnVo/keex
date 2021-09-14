@@ -25,6 +25,7 @@ class UpdateCartItem extends Component
 
         Cart::update($this->rowId, $this->qty);
 
+        //protected listener on dropdown cart
         $this->emit('render');
     }
 

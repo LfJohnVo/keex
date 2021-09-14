@@ -139,14 +139,10 @@
                                         @livewire('update-cart-item-size', ['rowId' => $item->rowId], key($item->rowId))
 
                                     @elseif($item->options->color)
-
                                         @livewire('update-cart-item-color', ['rowId' => $item->rowId],
                                         key($item->rowId))
-
                                     @else
-
                                         @livewire('update-cart-item', ['rowId' => $item->rowId], key($item->rowId))
-
                                     @endif
                                 </div>
                             </td>
