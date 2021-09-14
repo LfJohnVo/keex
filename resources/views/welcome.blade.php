@@ -1,8 +1,7 @@
 <x-app-layout>
+    <link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
 
     @livewire('banner')
-    <link href="https://unpkg.com/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
 
     <div class="container py-8">
 
@@ -80,8 +79,8 @@
                         var flkty = new Flickity(this.$refs.carousel, {
                             wrapAround: true,
                             autoPlay: 2000,
-                            pauseAutoPlayOnHover: false,
-                            fullscreen: true,
+                            pauseAutoPlayOnHover: true,
+                            fullscreen: false,
                             fade: true,
                         });
                         flkty.on('change', i => this.active = i);
