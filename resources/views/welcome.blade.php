@@ -78,7 +78,7 @@
                     init() {
                         var flkty = new Flickity(this.$refs.carousel, {
                             wrapAround: true,
-                            autoPlay: 2000,
+                            autoPlay: 1800,
                             pauseAutoPlayOnHover: true,
                             fullscreen: false,
                             fade: true,
