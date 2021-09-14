@@ -166,7 +166,7 @@
             </div>
 
         @else
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center pb-2">
                 <x-cart />
                 <p class="mt-4 text-lg text-gray-700">TU CARRO DE COMPRAS ESTÁ VACÍO</p>
 
@@ -180,8 +180,6 @@
 
     <!-- This example requires Tailwind CSS v2.0+ -->
 
-
-
     @if (Cart::count())
 
         <div class="px-6 py-4 mt-4 bg-white rounded-lg shadow-lg">
@@ -194,6 +192,9 @@
                 </div>
 
                 <div>
+                    <x-button-enlace class="px-4 py-2">
+                        Comprar
+                    </x-button-enlace>
                 </div>
             </div>
         </div>
