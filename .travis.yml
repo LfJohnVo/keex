@@ -21,6 +21,7 @@ before_script:
   - nvm install node
   - npm install
   - npm run dev
+  - php artisan optimize
 
 cache:
   directories:
