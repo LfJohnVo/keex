@@ -5,7 +5,8 @@ language: php
 
 php:
   - 7.4
-  #- 8.1
+node_js:
+  - 12
 
 services:
   - mysql
