@@ -20,6 +20,7 @@ before_script:
   - php artisan key:generate
   - php artisan storage:link
   #- php artisan migrate:fresh --seed
+  - nvm install node
   - npm install
   - npm run dev
 
