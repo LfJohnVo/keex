@@ -25,5 +25,5 @@ Route::get('search', SearchController::class)->name('search');
 Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
 
-/*Route::get('shopping-cart', Shoppingcart::class)->name('shopping-cart');
-Route::get('orders/create', CreateOrder::class)->middleware('auth')->name('orders.create');*/
+Route::get('shopping-cart', Shoppingcart::class)->name('shopping-cart');
+Route::get('orders/create', CreateOrder::class)->middleware('auth')->name('orders.create');
