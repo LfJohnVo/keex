@@ -7,7 +7,6 @@
     "require": {
         "php": "^7.3|^8.0",
         "bumbummen99/shoppingcart": "^4.0",
-        "fakerphp/faker": "^1.9.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -19,8 +18,8 @@
         "laravel/tinker": "^2.5",
         "laraveles/spanish": "^1.5",
         "livewire/livewire": "^2.5",
-        "mercadopago/dx-php": "^2.4",
-        "renatomarinho/laravel-page-speed": "^2.0"
+        "renatomarinho/laravel-page-speed": "^2.0",
+        "fakerphp/faker": "^1.9.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
