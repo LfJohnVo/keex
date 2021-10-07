@@ -1,0 +1,16 @@
+{
+    "Usuario_vendedor": {
+        "id": 835762428,
+        "nickname": "TESTCZIZ9OIB",
+        "password": "qatest5293",
+        "site_status": "active",
+        "email": "test_user_98345639@testuser.com"
+    },
+    "Usuario_comprador": {
+        "id": 837050535,
+        "nickname": "TEST7AU8V3NU",
+        "password": "qatest6128",
+        "site_status": "active",
+        "email": "test_user_61693889@testuser.com"
+    }
+}
