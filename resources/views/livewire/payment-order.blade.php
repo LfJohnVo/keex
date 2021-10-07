@@ -1,4 +1,4 @@
-<x-app-layout>
+<div>
 
     @php
         //SDK mercadopago
@@ -143,64 +143,65 @@
         </div>
     </div>
 
-    {{-- SDK MercadoPago.js V2 --}}
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <!-- Include the PayPal JavaScript SDK; replace "test" with your own sandbox Business account app client ID -->
-    <script src="https://www.paypal.com/sdk/js?client-id={{ config('services.paypal.client_id') }}&currency=MXN">
-    </script>
+    @push('script')
+        {{-- SDK MercadoPago.js V2 --}}
+        <script src="https://sdk.mercadopago.com/js/v2"></script>
+        <!-- Include the PayPal JavaScript SDK; replace "test" with your own sandbox Business account app client ID -->
+        <script src="https://www.paypal.com/sdk/js?client-id={{ config('services.paypal.client_id') }}&currency=MXN">
+        </script>
 
-    {{-- Mercado pago --}}
-    <script>
-        // Agrega credenciales de SDK
-        const mp = new MercadoPago("{{ config('services.mercadopago.key') }}", {
-            locale: 'es-MX'
-        });
+        {{-- Mercado pago --}}
+        <script>
+            // Agrega credenciales de SDK
+            const mp = new MercadoPago("{{ config('services.mercadopago.key') }}", {
+                locale: 'es-MX'
+            });
 
-        // Inicializa el checkout
-        mp.checkout({
-            preference: {
-                id: '{{ $preference->id }}'
-            },
-            render: {
-                container: '.cho-container', // Indica el nombre de la clase donde se mostrará el botón de pago
-                label: 'Pagar con MercadoPago', // Cambia el texto del botón de pago (opcional)
-            }
-        });
-    </script>
+            // Inicializa el checkout
+            mp.checkout({
+                preference: {
+                    id: '{{ $preference->id }}'
+                },
+                render: {
+                    container: '.cho-container', // Indica el nombre de la clase donde se mostrará el botón de pago
+                    label: 'Pagar con MercadoPago', // Cambia el texto del botón de pago (opcional)
+                }
+            });
+        </script>
 
-    {{-- PayPal --}}
-    <script>
-        paypal.Buttons({
+        {{-- PayPal --}}
+        <script>
+            paypal.Buttons({
 
-            // Sets up the transaction when a payment button is clicked
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: "{{ $order->total }}" // Can reference variables or functions. Example: `value: document.getElementById('...').value`
-                        }
-                    }]
-                });
-            },
+                // Sets up the transaction when a payment button is clicked
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: "{{ $order->total }}" // Can reference variables or functions. Example: `value: document.getElementById('...').value`
+                            }
+                        }]
+                    });
+                },
 
-            // Finalize the transaction after payer approval
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(orderData) {
-                    // Successful capture! For dev/demo purposes:
-                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                    //var transaction = orderData.purchase_units[0].payments.captures[0];
-                    alert('Transaction ' + transaction.status + ': ' + transaction.id +
-                        '\n\nSee console for all available details');
+                // Finalize the transaction after payer approval
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(orderData) {
+                        // Successful capture! For dev/demo purposes:
+                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                        //var transaction = orderData.purchase_units[0].payments.captures[0];
+                        //emit event from livewire
+                        Livewire.emit('payOrder');
 
-                    // When ready to go live, remove the alert and show a success message within this page. For example:
-                    // var element = document.getElementById('paypal-button-container');
-                    // element.innerHTML = '';
-                    // element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                    // Or go to another URL:  actions.redirect('thank_you.html');
-                });
-            }
-        }).render('#paypal-button-container');
-    </script>
+                        // When ready to go live, remove the alert and show a success message within this page. For example:
+                        // var element = document.getElementById('paypal-button-container');
+                        // element.innerHTML = '';
+                        // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                        // Or go to another URL:  actions.redirect('thank_you.html');
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script>
 
-
-</x-app-layout>
+    @endpush
+</div>
