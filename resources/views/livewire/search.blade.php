@@ -1,4 +1,4 @@
-<div class="relative flex-1" x-data>
+<div class="relative flex-1 " x-data>
     <div class="relative text-gray-600">
         <form action="{{ route('search') }}" autocomplete="off">
             <x-jet-input wire:model="search" name="name" type="text"
