@@ -1,4 +1,4 @@
-<header class="sticky top-0 bg-gray-900" x-data="dropdown()" style="z-index: 900;">
+<header class="sticky top-0 bg-gray-900 shadow-lg" x-data="dropdown()" style="z-index: 900;">
     <div class="container flex items-center justify-between h-16 md:justify-start">
         <a :class="{'bg-opacity-100 text-blue-600' : open}" x-on:click="show()"
             class="flex flex-col items-center justify-center order-last h-full px-6 text-white bg-white bg-opacity-25 cursor-pointer md:px-4 md:order-first semibold">
@@ -24,7 +24,7 @@
                     <x-slot name="trigger">
                         <button
                             class="flex text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
-                            <img class="object-cover w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
+                            <img class="object-cover w-8 h-8 rounded-full " src="{{ Auth::user()->profile_photo_url }}"
                                 alt="{{ Auth::user()->name }}" />
                         </button>
                     </x-slot>
