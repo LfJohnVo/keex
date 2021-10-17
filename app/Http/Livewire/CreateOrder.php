@@ -27,11 +27,13 @@ class CreateOrder extends Component
         'envio_type' => 'required'
     ];
 
-    public function mount(){
+    public function mount()
+    {
         $this->departments = Department::get();
     }
 
-    public function updatedEnvioType($value){
+    public function updatedEnvioType($value)
+    {
         if ($value == 1) {
             $this->resetValidation([
                 'department_id', 'city_id', 'district_id', 'address', 'references'
@@ -40,14 +42,16 @@ class CreateOrder extends Component
     }
 
 
-    public function updatedDepartmentId($value){
+    public function updatedDepartmentId($value)
+    {
         $this->cities = City::where('department_id', $value)->get();
 
         $this->reset(['city_id', 'district_id']);
     }
 
 
-    public function updatedCityId($value){
+    public function updatedCityId($value)
+    {
 
         $city = City::find($value);
 
@@ -59,11 +63,12 @@ class CreateOrder extends Component
     }
 
 
-    public function create_order(){
+    public function create_order()
+    {
 
         $rules = $this->rules;
 
-        if($this->envio_type == 2){
+        if ($this->envio_type == 2) {
             $rules['department_id'] = 'required';
             $rules['city_id'] = 'required';
             $rules['district_id'] = 'required';
@@ -102,9 +107,9 @@ class CreateOrder extends Component
         $order->save();
 
         //clean cart
-        /*foreach (Cart::content() as $item) {
+        foreach (Cart::content() as $item) {
             discount($item);
-        }*/
+        }
 
         Cart::destroy();
 

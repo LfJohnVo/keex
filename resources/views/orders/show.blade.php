@@ -44,8 +44,14 @@
         </div>
 
 
-        <div class="px-6 py-4 mb-6 bg-white rounded-lg shadow-lg">
+        <div class="flex items-center px-6 py-4 mb-6 bg-white rounded-lg shadow-lg">
             <p class="text-lg text-gray-700 uppercase">Número de orden: #{{ $order->id }}</p>
+
+            @if ($order->status = 1)
+                <x-button-enlace class="ml-auto" href="{{ route('orders.payment', $order) }}">
+                    Ir a pagar
+                </x-button-enlace>
+            @endif
         </div>
 
         <div class="p-6 px-6 py-4 mb-6 bg-white rounded-lg shadow-lg">
