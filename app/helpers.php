@@ -47,9 +47,7 @@ function discount($item)
     $product = Product::find($item->id);
     $qty_available = qty_available($item->id, $item->options->color_id, $item->options->size_id);
 
-
     if ($item->options->size_id) {
-
         $size = Size::find($item->options->size_id);
 
         $size->colors()->detach($item->options->color_id);
@@ -58,15 +56,12 @@ function discount($item)
             $item->options->color_id => ['quantity' => $qty_available]
         ]);
     } elseif ($item->options->color_id) {
-
         $product->colors()->detach($item->options->color_id);
 
         $product->colors()->attach([
             $item->options->color_id => ['quantity' => $qty_available]
         ]);
     } else {
-
-
         $product->quantity = $qty_available;
         $product->save();
     }
