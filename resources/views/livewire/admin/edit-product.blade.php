@@ -46,7 +46,7 @@
         @endif
 
 
-        {{--@livewire('admin.status-product', ['product' => $product], key('status-product-' . $product->id))--}}
+        {{-- @livewire('admin.status-product', ['product' => $product], key('status-product-' . $product->id)) --}}
 
         {{-- <div class="p-6 bg-white rounded-lg shadow-xl">
 
@@ -158,8 +158,8 @@
             @endif
 
             <div class="flex items-center justify-end mt-4">
-
-                <x-jet-action-message class="mr-3" on="saved">
+                {{-- listen emited event "saved" --}}
+                <x-jet-action-message class="mr-3 text-green-600" on="saved">
                     Actualizado
                 </x-jet-action-message>
 
@@ -174,11 +174,11 @@
 
             @if ($this->subcategory->size)
 
-                {{--@livewire('admin.size-product', ['product' => $product], key('size-product-' . $product->id))--}}
+                @livewire('admin.size-product', ['product' => $product], key('size-product-' . $product->id))
 
             @elseif($this->subcategory->color)
 
-                {{--@livewire('admin.color-product', ['product' => $product], key('color-product-' . $product->id))--}}
+                @livewire('admin.color-product', ['product' => $product], key('color-product-' . $product->id))
 
             @endif
 
@@ -255,29 +255,6 @@
                     }
                 })
 
-            })
-
-            Livewire.on('deletePivot', pivot => {
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-
-                        Livewire.emitTo('admin.color-product', 'delete', pivot);
-
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                        )
-                    }
-                })
             })
 
             Livewire.on('deleteColorSize', pivot => {

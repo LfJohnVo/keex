@@ -97,7 +97,7 @@ class CreateProduct extends Component
             'showConfirmButton' =>  false,
         ]);
 
-        return redirect()->route('admin.products.edit', $product);
+        return redirect()->route('admin.index');
     }
 
     public function render()

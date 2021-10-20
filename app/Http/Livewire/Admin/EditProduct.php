@@ -39,7 +39,7 @@ class EditProduct extends Component
     {
         $this->product = $product;
 
-        $this->categories = Category::all();
+        $this->categories = Category::get();
 
         $this->category_id = $product->subcategory->category->id;
 
@@ -84,7 +84,7 @@ class EditProduct extends Component
     public function save()
     {
         $rules = $this->rules;
-        $rules['slug'] = 'required|unique:products,slug,' . $this->product->id;
+        $rules['product.slug'] = 'required|unique:products,slug,' . $this->product->id;
 
         if ($this->product->subcategory_id) {
             if (!$this->subcategory->color && !$this->subcategory->size) {
@@ -97,6 +97,8 @@ class EditProduct extends Component
         $this->product->slug = $this->slug;
 
         $this->product->save();
+
+        $this->emit('saved');
 
         $this->alert('success', 'Producto actualizado correctamente', [
             'position' =>  'top-end',

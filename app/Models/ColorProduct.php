@@ -8,16 +8,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ColorProduct extends Model
 {
-    use HasFactory, softDeletes;
+    use HasFactory;
 
     protected $table = "color_product";
 
     //relacion uno a muchos inversado
-    public function color(){
+    public function color()
+    {
         return $this->belongsTo(Color::class);
     }
 
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
 }
