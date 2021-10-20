@@ -24,6 +24,9 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    </script>
+
 </head>
 
 <body class="font-sans antialiased">
@@ -49,9 +52,6 @@
     @stack('modals')
 
     @livewireScripts
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
-    </script>
 
     <x-livewire-alert::scripts />
 
