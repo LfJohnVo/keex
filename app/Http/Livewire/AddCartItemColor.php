@@ -71,7 +71,7 @@ class AddCartItemColor extends Component
     public function added($value, $qty)
     {
         $this->alert('success', $qty . ' ' . $value . ' añadido al carrito', [
-            'position' =>  'bottom-end',
+            'position' =>  'top',
             'timer' =>  '2000',
             'toast' =>  true,
             'text' =>  '',
