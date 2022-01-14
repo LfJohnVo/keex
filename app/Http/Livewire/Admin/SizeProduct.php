@@ -4,9 +4,11 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\Size;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class SizeProduct extends Component
 {
+    use LivewireAlert;
 
     public $product, $name, $open = false;
 

@@ -6,7 +6,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Image;
 use Livewire\Component;
-
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use App\Models\Product;
 use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Builder;
@@ -17,6 +17,7 @@ use Illuminate\Support\Str;
 
 class EditProduct extends Component
 {
+    use LivewireAlert;
 
     public $product, $categories, $subcategories, $brands, $slug;
 

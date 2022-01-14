@@ -8,11 +8,12 @@ use App\Models\Product;
 use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
-
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Illuminate\Support\Str;
 
 class CreateProduct extends Component
 {
+    use LivewireAlert;
 
     public $categories, $subcategories = [], $brands = [];
     public $category_id = "", $subcategory_id = "", $brand_id = "";

@@ -4,12 +4,12 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Product;
 use Livewire\Component;
-
-
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\WithPagination;
 
 class ShowProducts extends Component
 {
+    use LivewireAlert;
     use WithPagination;
 
     public $search;
