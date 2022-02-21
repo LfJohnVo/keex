@@ -4,11 +4,13 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Color;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 use App\Models\ColorProduct as Pivot;
 
 class ColorProduct extends Component
 {
+    use LivewireAlert;
 
     public $product, $colors, $color_id, $quantity, $open = false;
 

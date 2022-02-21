@@ -5,9 +5,12 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Storage;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class AddCartItem extends Component
 {
+    use LivewireAlert;
+
     public $product, $quantity;
     public $qty = 1;
     public $options = [
@@ -57,7 +60,7 @@ class AddCartItem extends Component
     public function added($value, $qty)
     {
         $this->alert('success', $qty . ' ' . $value . ' añadido al carrito', [
-            'position' =>  'bottom-end',
+            'position' =>  'top-end',
             'timer' =>  '2000',
             'toast' =>  true,
             'text' =>  '',

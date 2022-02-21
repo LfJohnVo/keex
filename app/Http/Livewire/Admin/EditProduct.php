@@ -12,11 +12,13 @@ use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Builder;
 
 use Illuminate\Support\Facades\Storage;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 use Illuminate\Support\Str;
 
 class EditProduct extends Component
 {
+    use LivewireAlert;
 
     public $product, $categories, $subcategories, $brands, $slug;
 
