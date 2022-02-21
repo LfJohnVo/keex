@@ -18,7 +18,7 @@
         integrity="sha512-YM6sLXVMZqkCspZoZeIPGXrhD9wxlxEF7MzniuvegURqrTGV2xTfqq1v9FJnczH+5OGFl5V78RgHZGaK34ylVg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- FlexSlider --}}
-    <link rel="stylesheet" href="{{ asset('vendor/FlexSlider/flexslider.css') }}" />
+    <link rel="stylesheet" href="{{ asset('flexslider/flexslider.css') }}" />
 
 
     @livewireStyles
@@ -34,7 +34,7 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- flexslider -->
-    <script src="{{ asset('vendor/FlexSlider/jquery.flexslider-min.js') }}"></script>
+    <script src="{{ asset('flexslider/jquery.flexslider-min.js') }}"></script>
 
 </head>
 
