@@ -6,9 +6,12 @@ use App\Models\Size;
 use Livewire\Component;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Storage;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class AddCartItemSize extends Component
 {
+    use LivewireAlert;
+
     public $product, $sizes;
     public $color_id = "";
     public $size_id = "";
@@ -76,7 +79,7 @@ class AddCartItemSize extends Component
     public function added($value, $qty)
     {
         $this->alert('success', $qty . ' ' . $value . ' añadido al carrito', [
-            'position' =>  'top',
+            'position' =>  'top-end',
             'timer' =>  '2000',
             'toast' =>  true,
             'text' =>  '',

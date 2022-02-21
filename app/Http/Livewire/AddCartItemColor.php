@@ -3,12 +3,13 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Storage;
 
 class AddCartItemColor extends Component
 {
+    use LivewireAlert;
 
     public $product, $colors;
     public $color_id = "";
@@ -71,7 +72,7 @@ class AddCartItemColor extends Component
     public function added($value, $qty)
     {
         $this->alert('success', $qty . ' ' . $value . ' añadido al carrito', [
-            'position' =>  'top',
+            'position' =>  'top-end',
             'timer' =>  '2000',
             'toast' =>  true,
             'text' =>  '',
