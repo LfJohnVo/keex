@@ -178,6 +178,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laraveles\Spanish\SpanishServiceProvider::class,
+        Ladumor\LaravelPwa\PWAServiceProvider::class,
 
     ],
 
@@ -232,6 +233,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Date' => Jenssegers\Date\Date::class,
+        'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
 
     ],
 

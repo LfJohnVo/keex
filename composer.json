@@ -13,6 +13,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "jantinnerezo/livewire-alert": "^2.1",
         "jenssegers/date": "^4.0",
+        "ladumor/laravel-pwa": "^0.0.2",
         "laravel/framework": "^8.40",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.6",
