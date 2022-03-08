@@ -1,10 +1,11 @@
 <div>
     <section class="relative text-gray-600 body-font">
         <div class="absolute inset-0 bg-gray-300">
-            <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map"
+            <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" zoom="200" title="map"
                 scrolling="no"
-                src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-                style=""></iframe>
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30111.463759179904!2d-99.16545115431326!3d19.372054853484293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fe4c28a397f3%3A0xde6ce6638e289c1b!2sPa&#39;l%20Perro%20(Matriz)!5e0!3m2!1sen!2smx!4v1646704172254!5m2!1sen!2smx&z=100"
+                style=""
+                ></iframe>
         </div>
         <div class="container flex px-5 py-24 mx-auto">
             <div

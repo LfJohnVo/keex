@@ -20,6 +20,7 @@
         @endforeach
 
     </div>
+
     @livewire('contact-form')
 
 
