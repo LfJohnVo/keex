@@ -179,6 +179,7 @@ return [
         Jenssegers\Date\DateServiceProvider::class,
         Laraveles\Spanish\SpanishServiceProvider::class,
         Ladumor\LaravelPwa\PWAServiceProvider::class,
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
     ],
 
