@@ -2,9 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <!-- normal -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    {!! SEOMeta::generate() !!}
+    {!! OpenGraph::generate() !!}
+    {!! Twitter::generate() !!}
 
     <title>{{ config('app.name', 'Keex | TallStack Ecommerce') }}</title>
 
@@ -20,7 +24,6 @@
     {{-- FlexSlider --}}
     <link rel="stylesheet" href="{{ asset('flexslider/flexslider.css') }}" />
 
-
     @livewireStyles
 
     <!-- Scripts -->
@@ -35,8 +38,32 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- flexslider -->
     <script src="{{ asset('flexslider/jquery.flexslider-min.js') }}"></script>
-
+    <!-- PWA  -->
+    <meta name="theme-color" content="#6777ef" />
+    <link rel="apple-touch-icon" href="{{ asset('blackdog.png') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
+<style>
+    .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+
+    .my-float {
+        margin-top: 16px;
+    }
+
+</style>
 
 <body class="font-sans antialiased">
     <x-jet-banner />
@@ -51,6 +78,12 @@
     </div>
 
     @livewire('footer')
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+        class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
 
     @stack('modals')
 
@@ -86,7 +119,14 @@
     </script>
 
     @stack('script')
-
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").then(function(reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    </script>
 </body>
 
 </html>

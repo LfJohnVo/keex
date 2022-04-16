@@ -6,7 +6,6 @@
     <div class="container py-8">
 
         @foreach ($categories as $category)
-
             <section class="mb-6">
                 <div class="flex items-center mb-2">
                     <h1 class="py-1 text-lg font-semibold text-gray-700 uppercase ">
@@ -18,9 +17,11 @@
                 </div>
                 @livewire('category-products', ['category' => $category])
             </section>
-
         @endforeach
+
     </div>
+
+    @livewire('contact-form')
 
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

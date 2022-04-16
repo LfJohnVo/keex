@@ -64,7 +64,6 @@
             </div>
         </div>
     </div>
-
     @push('script')
         <script>
             $(document).ready(function() {

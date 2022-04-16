@@ -9,7 +9,6 @@ use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
-
 use Illuminate\Support\Str;
 
 class CreateProduct extends Component
