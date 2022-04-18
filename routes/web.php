@@ -3,7 +3,7 @@
 use App\Models\Order;
 use App\Http\Livewire\CreateOrder;
 use App\Http\Livewire\PaymentOrder;
-use App\Http\Livewire\Shoppingcart;
+use App\Http\Livewire\ShoppingCart;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -30,13 +30,10 @@ Route::get('products/{product}', [ProductController::class, 'show'])->name('prod
 
 Route::middleware('auth')->group(function () {
     Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
-    Route::get('shopping-cart', Shoppingcart::class)->name('shopping-cart');
+    Route::get('shopping-cart', ShoppingCart::class)->name('shopping-cart');
     Route::get('orders/create', CreateOrder::class)->name('orders.create');
-
     Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
-
     Route::get('orders/{order}/payment', PaymentOrder::class)->name('orders.payment');
     Route::get('orders/{order}/pay', [OrderController::class, 'pay'])->name('orders.pay');
-
     Route::post('webhooks', WebhooksController::class);
 });
