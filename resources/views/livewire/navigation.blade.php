@@ -10,7 +10,8 @@
         </a>
 
         <a href="/" class="mx-6">
-            <x-jet-application-mark class="block w-auto h-9" />
+            {{-- <x-jet-application-mark class="block w-auto h-9" /> --}}
+            <img src="{{ asset('logopalperro.jpeg') }}" class="block w-auto h-9">
         </a>
 
         <div class="flex-1 hidden md:block">

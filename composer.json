@@ -22,7 +22,8 @@
         "laraveles/spanish": "^1.5",
         "livewire/livewire": "^2.5",
         "mercadopago/dx-php": "^2.4",
-        "renatomarinho/laravel-page-speed": "^2.0"
+        "renatomarinho/laravel-page-speed": "^2.0",
+        "spatie/laravel-sitemap": "^6.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

@@ -13,7 +13,7 @@ return [
             'titleBefore'  => "Tienda de alimentos y accesorios para mascotas", // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
             'description'  => 'Pet shop con Las Mejores Marcas de Alimento para Perros y Mascotas. Entra Ya! Royal Canin, Hills, ProPlan, Eukanuba, Natural Gourmet, ProSeries, Diamond, ...', // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => [],
+            'keywords'     => ['Tienda de mascotas', 'Costal de croquetas', 'Diamond'],
             'canonical'    => 'full', // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
             'robots'       => 'all', // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],
@@ -49,7 +49,7 @@ return [
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
-            //'card'        => 'summary',
+            'card'        => 'summary',
             //'site'        => '@LuizVinicius73',
         ],
     ],
