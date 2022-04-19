@@ -9,6 +9,8 @@
     {!! SEOMeta::generate() !!}
     {!! OpenGraph::generate() !!}
     {!! Twitter::generate() !!}
+    {!! JsonLd::generate() !!}
+
 
     <title>{{ config('app.name', 'Keex | TallStack Ecommerce') }}</title>
 
@@ -40,7 +42,7 @@
     <script src="{{ asset('flexslider/jquery.flexslider-min.js') }}"></script>
     <!-- PWA  -->
     <meta name="theme-color" content="#6777ef" />
-    <link rel="apple-touch-icon" href="{{ asset('blackdog.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('logopalperro.jpeg') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 <style>

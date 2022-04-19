@@ -12,6 +12,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\WebhooksController;
+use Spatie\Sitemap\SitemapGenerator;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,4 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::get('orders/{order}/payment', PaymentOrder::class)->name('orders.payment');
     Route::get('orders/{order}/pay', [OrderController::class, 'pay'])->name('orders.pay');
     Route::post('webhooks', WebhooksController::class);
+});
+
+Route::get("generate-sitemap", function () {
+    SitemapGenerator::create(env('APP_URL'))->writeToFile(public_path('sitemap.xml'));
 });

@@ -1,122 +1,524 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>http://keex.test/</loc>
-        <lastmod>2022-03-17T03:01:41+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/</loc>
+        <lastmod>2022-04-19T20:38:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/login</loc>
-        <lastmod>2022-03-17T03:01:42+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/login</loc>
+        <lastmod>2022-04-19T20:38:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/categories/consola-y-videojuegos</loc>
-        <lastmod>2022-03-17T03:01:43+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/register</loc>
+        <lastmod>2022-04-19T20:38:31+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/categories/consola-y-videojuegos?subcategoria=xbos</loc>
-        <lastmod>2022-03-17T03:01:46+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/celulares-y-tablets</loc>
+        <lastmod>2022-04-19T20:38:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/categories/consola-y-videojuegos?subcategoria=play-station</loc>
-        <lastmod>2022-03-17T03:01:48+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/celulares-y-tablets?subcategoria=celulares-y-smartphones</loc>
+        <lastmod>2022-04-19T20:38:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/categories/consola-y-videojuegos?subcategoria=videojuegos-para-pc</loc>
-        <lastmod>2022-03-17T03:01:51+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/celulares-y-tablets?subcategoria=accesorios-para-celulares</loc>
+        <lastmod>2022-04-19T20:38:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/categories/consola-y-videojuegos?subcategoria=nintendo</loc>
-        <lastmod>2022-03-17T03:01:53+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/celulares-y-tablets?subcategoria=smartwatches</loc>
+        <lastmod>2022-04-19T20:38:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/categories/moda?subcategoria=relojes</loc>
-        <lastmod>2022-03-17T03:01:56+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/tv-audio-y-video</loc>
+        <lastmod>2022-04-19T20:38:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/non-eius-inventore</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/tv-audio-y-video?subcategoria=tv-y-audio</loc>
+        <lastmod>2022-04-19T20:38:32+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/illo-optio-est</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/tv-audio-y-video?subcategoria=audios</loc>
+        <lastmod>2022-04-19T20:38:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/quas-dicta</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/tv-audio-y-video?subcategoria=audio-para-autos</loc>
+        <lastmod>2022-04-19T20:38:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/libero-explicabo</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/consola-y-videojuegos</loc>
+        <lastmod>2022-04-19T20:38:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/officia-sit-animi</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/consola-y-videojuegos?subcategoria=xbos</loc>
+        <lastmod>2022-04-19T20:38:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/aut-rem-qui</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/consola-y-videojuegos?subcategoria=play-station</loc>
+        <lastmod>2022-04-19T20:38:33+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/sed-rerum</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/consola-y-videojuegos?subcategoria=videojuegos-para-pc</loc>
+        <lastmod>2022-04-19T20:38:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/error-qui</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/consola-y-videojuegos?subcategoria=nintendo</loc>
+        <lastmod>2022-04-19T20:38:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/numquam-recusandae</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/computacion</loc>
+        <lastmod>2022-04-19T20:38:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/nisi-explicabo</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/computacion?subcategoria=portatiles</loc>
+        <lastmod>2022-04-19T20:38:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/fugiat-molestiae</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/computacion?subcategoria=pc-escritorio</loc>
+        <lastmod>2022-04-19T20:38:34+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>http://keex.test/products/repellat-alias-unde</loc>
-        <lastmod>2022-03-17T03:02:11+00:00</lastmod>
+        <loc>http://127.0.0.1:8000/categories/computacion?subcategoria=almacenamiento</loc>
+        <lastmod>2022-04-19T20:38:34+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/computacion?subcategoria=accesorios-computadoras</loc>
+        <lastmod>2022-04-19T20:38:35+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/moda</loc>
+        <lastmod>2022-04-19T20:38:35+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/moda?subcategoria=mujeres</loc>
+        <lastmod>2022-04-19T20:38:35+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/moda?subcategoria=hombres</loc>
+        <lastmod>2022-04-19T20:38:35+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/moda?subcategoria=lentes</loc>
+        <lastmod>2022-04-19T20:38:35+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/categories/moda?subcategoria=relojes</loc>
+        <lastmod>2022-04-19T20:38:35+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/forgot-password</loc>
+        <lastmod>2022-04-19T20:38:35+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/excepturi-recusandae-sed</loc>
+        <lastmod>2022-04-19T20:38:36+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/odit-alias-non</loc>
+        <lastmod>2022-04-19T20:38:36+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/nobis-illo-exercitationem</loc>
+        <lastmod>2022-04-19T20:38:36+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/et-doloribus-et</loc>
+        <lastmod>2022-04-19T20:38:36+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/ut-unde</loc>
+        <lastmod>2022-04-19T20:38:36+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/minus-quia-odit</loc>
+        <lastmod>2022-04-19T20:38:36+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/qui-iusto</loc>
+        <lastmod>2022-04-19T20:38:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/voluptates-neque</loc>
+        <lastmod>2022-04-19T20:38:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/unde-aut-repellat</loc>
+        <lastmod>2022-04-19T20:38:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/officia-porro</loc>
+        <lastmod>2022-04-19T20:38:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/exercitationem-et-exercitationem</loc>
+        <lastmod>2022-04-19T20:38:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/quisquam-architecto</loc>
+        <lastmod>2022-04-19T20:38:37+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/corrupti-nulla-autem</loc>
+        <lastmod>2022-04-19T20:38:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/enim-dolorem</loc>
+        <lastmod>2022-04-19T20:38:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/repellat-repudiandae</loc>
+        <lastmod>2022-04-19T20:38:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/qui-aliquid-voluptate</loc>
+        <lastmod>2022-04-19T20:38:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/fugiat-qui</loc>
+        <lastmod>2022-04-19T20:38:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/molestiae-voluptatem</loc>
+        <lastmod>2022-04-19T20:38:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/repellat-ut</loc>
+        <lastmod>2022-04-19T20:38:38+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/veniam-et-nulla</loc>
+        <lastmod>2022-04-19T20:38:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/ea-mollitia</loc>
+        <lastmod>2022-04-19T20:38:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/magnam-quas</loc>
+        <lastmod>2022-04-19T20:38:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/harum-voluptas-aut</loc>
+        <lastmod>2022-04-19T20:38:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/iusto-nobis</loc>
+        <lastmod>2022-04-19T20:38:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/aspernatur-sapiente</loc>
+        <lastmod>2022-04-19T20:38:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/laboriosam-ea-neque</loc>
+        <lastmod>2022-04-19T20:38:39+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/id-nostrum</loc>
+        <lastmod>2022-04-19T20:38:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/dolores-quia</loc>
+        <lastmod>2022-04-19T20:38:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/iste-sint</loc>
+        <lastmod>2022-04-19T20:38:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/neque-voluptas</loc>
+        <lastmod>2022-04-19T20:38:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/tenetur-ad-et</loc>
+        <lastmod>2022-04-19T20:38:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/ipsum-corrupti</loc>
+        <lastmod>2022-04-19T20:38:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/quibusdam-quam</loc>
+        <lastmod>2022-04-19T20:38:40+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/aut-saepe</loc>
+        <lastmod>2022-04-19T20:38:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/qui-distinctio</loc>
+        <lastmod>2022-04-19T20:38:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/sint-nobis</loc>
+        <lastmod>2022-04-19T20:38:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/quis-quos</loc>
+        <lastmod>2022-04-19T20:38:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/tenetur-aut-quia</loc>
+        <lastmod>2022-04-19T20:38:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/qui-harum</loc>
+        <lastmod>2022-04-19T20:38:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/ipsa-ut</loc>
+        <lastmod>2022-04-19T20:38:41+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/quibusdam-molestias</loc>
+        <lastmod>2022-04-19T20:38:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/quia-dolorem</loc>
+        <lastmod>2022-04-19T20:38:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/ea-facilis-perspiciatis</loc>
+        <lastmod>2022-04-19T20:38:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/tempora-et-illo</loc>
+        <lastmod>2022-04-19T20:38:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/consequuntur-debitis-at</loc>
+        <lastmod>2022-04-19T20:38:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/enim-porro</loc>
+        <lastmod>2022-04-19T20:38:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/et-saepe-id</loc>
+        <lastmod>2022-04-19T20:38:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/autem-itaque-molestias</loc>
+        <lastmod>2022-04-19T20:38:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/aliquid-dicta-amet</loc>
+        <lastmod>2022-04-19T20:38:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/omnis-fugit-omnis</loc>
+        <lastmod>2022-04-19T20:38:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/labore-voluptatem-fuga</loc>
+        <lastmod>2022-04-19T20:38:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/quo-quo-corporis</loc>
+        <lastmod>2022-04-19T20:38:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/consequatur-illum-repellendus</loc>
+        <lastmod>2022-04-19T20:38:43+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/corrupti-id</loc>
+        <lastmod>2022-04-19T20:38:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/et-ut-blanditiis</loc>
+        <lastmod>2022-04-19T20:38:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/repudiandae-nam</loc>
+        <lastmod>2022-04-19T20:38:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/dolorum-cupiditate</loc>
+        <lastmod>2022-04-19T20:38:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/ut-vel-porro</loc>
+        <lastmod>2022-04-19T20:38:44+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/non-eos</loc>
+        <lastmod>2022-04-19T20:38:45+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://127.0.0.1:8000/products/et-ab-ullam</loc>
+        <lastmod>2022-04-19T20:38:45+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
