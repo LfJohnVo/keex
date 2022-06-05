@@ -9,13 +9,12 @@
         "artesaos/seotools": "^0.22.0",
         "bumbummen99/shoppingcart": "^4.0",
         "fakerphp/faker": "^1.9.1",
-        "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "jantinnerezo/livewire-alert": "^2.1",
         "jenssegers/date": "^4.0",
         "ladumor/laravel-pwa": "^0.0.2",
-        "laravel/framework": "^8.40",
+        "laravel/framework": "^9.0",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
@@ -26,10 +25,10 @@
         "spatie/laravel-sitemap": "^6.1"
     },
     "require-dev": {
-        "facade/ignition": "^2.5",
+        "spatie/laravel-ignition": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",
-        "nunomaduro/collision": "^5.0",
+        "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.3.3"
     },
     "autoload": {
