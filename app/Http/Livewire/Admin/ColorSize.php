@@ -23,10 +23,22 @@ class ColorSize extends Component
     public function save()
     {
         $this->validate();
+
+        $this->size->colors()->attach([
+            $this->color_id => [
+                'quantity' => $this->quantity
+            ]
+        ]);
+
+        $this->reset(['color_id', 'quantity']);
+        $this->emit('saved');
+        $this->size = $this->size->fresh();
     }
 
     public function render()
     {
-        return view('livewire.admin.color-size');
+        $size_colors = $this->size->colors;
+
+        return view('livewire.admin.color-size', compact('size_colors'));
     }
 }

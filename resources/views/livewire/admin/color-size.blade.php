@@ -48,4 +48,51 @@
         </div>
 
     </div>
+
+    @if ($size_colors->count())
+
+            <div class="p-6">
+                <table class="text-center">
+                    <thead>
+                        <tr>
+                            <th class="w-1/3 px-4 py-2">
+                                Color
+                            </th>
+
+                            <th class="w-1/3 px-4 py-2">
+                                Cantidad
+                            </th>
+                            <th class="w-1/3 px-4 py-2"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach ($size_colors as $size_color)
+                            <tr wire:key="size_color-{{ $size_color->pivot->id }}">
+                                <td class="px-4 py-2 capitalize">
+                                    {{ __($colors->find($size_color->pivot->color_id)->name) }}
+                                </td>
+                                <td class="px-4 py-2">
+                                    {{ $size_color->pivot->quantity }} unidades
+                                </td>
+                                <td class="flex px-4 py-2">
+                                    <x-jet-secondary-button class="ml-auto mr-2 shadow-lg"
+                                        wire:click="edit({{ $size_color->pivot->id }})"
+                                        wire:loading.attr="disabled"
+                                        wire:target="edit({{ $size_color->pivot->id }})">
+                                        Actualizar
+                                    </x-jet-secondary-button>
+
+                                    <x-jet-danger-button class="shadow-lg"
+                                        wire:click="$emit('deletePivot', {{ $size_color->pivot->id }})">
+                                        Eliminar
+                                    </x-jet-danger-button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+        @endif
 </div>

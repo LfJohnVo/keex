@@ -41,7 +41,7 @@
                  @livewire('admin.color-size', ['size' => $size], key('color-size-' . $size->id))
              </li>
          @endforeach
-     </ul>
+     </ul> 
 
 
      <x-jet-dialog-modal wire:model="open">
