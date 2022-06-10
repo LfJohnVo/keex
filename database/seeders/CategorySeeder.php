@@ -18,33 +18,64 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Celulares y tablets',
-                'slug' => Str::slug('Celulares y tablets'),
-                'icon' => '<i class="fas fa-mobile-alt"></i>'
+                'name' => 'Collares y correas',
+                'slug' => Str::slug('Collares y correas'),
+                'icon' => '<i class="fa-solid fa-paw"></i>'
             ],
             [
-                'name' => 'TV, audio y video',
-                'slug' => Str::slug('TV, audio y video'),
-                'icon' => '<i class="fas fa-tv"></i>'
-            ],
-
-            [
-                'name' => 'Consola y videojuegos',
-                'slug' => Str::slug('Consola y videojuegos'),
-                'icon' => '<i class="fas fa-gamepad"></i>'
+                'name' => 'Aseo',
+                'slug' => Str::slug('Aseo'),
+                'icon' => '<i class="fa-solid fa-shower"></i>'
             ],
 
             [
-                'name' => 'Computación',
-                'slug' => Str::slug('Computación'),
-                'icon' => '<i class="fas fa-laptop"></i>'
+                'name' => 'Juguetes',
+                'slug' => Str::slug('Juguetes'),
+                'icon' => '<i class="fas fa-dice"></i>'
             ],
 
             [
-                'name' => 'Moda',
-                'slug' => Str::slug('Moda'),
+                'name' => 'Comestibles',
+                'slug' => Str::slug('Comestibles'),
+                'icon' => '<i class="fa-solid fa-cookie"></i>'
+            ],
+
+            [
+                'name' => 'Ansiedad',
+                'slug' => Str::slug('Ansiedad'),
+                'icon' => '<i class="fa-solid fa-heart-pulse"></i>'
+            ],
+
+            [
+                'name' => 'Accesorios Medicos',
+                'slug' => Str::slug('Accesorios Medicos'),
+                'icon' => '<i class="fa-solid fa-stethoscope"></i>'
+            ],
+
+            [
+                'name' => 'Accesorios',
+                'slug' => Str::slug('Accesorios'),
+                'icon' => '<i class="fa-solid fa-medal"></i>'
+            ],
+
+            [
+                'name' => 'Ropa',
+                'slug' => Str::slug('Ropa'),
                 'icon' => '<i class="fas fa-tshirt"></i>'
             ],
+
+            [
+                'name' => 'Comida humeda',
+                'slug' => Str::slug('Comida humeda'),
+                'icon' => '<i class="fa-solid fa-bowl-food"></i>'
+            ],
+
+            [
+                'name' => 'Costales',
+                'slug' => Str::slug('Costales'),
+                'icon' => '<i class="fa-solid fa-bacon"></i>'
+            ],
+
         ];
 
         foreach ($categories as $category) {

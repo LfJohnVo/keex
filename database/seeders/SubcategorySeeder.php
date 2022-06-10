@@ -17,128 +17,265 @@ class SubcategorySeeder extends Seeder
     public function run()
     {
         $subcategories = [
-            /* Celulares y tablets */
             [
                 'category_id' => 1,
-                'name' => 'Celulares y smartphones',
-                'slug' => Str::slug('Celulares y smartphones'),
-                'color' => true
-            ],
-
-            [
-                'category_id' => 1,
-                'name' => 'Accesorios para celulares',
-                'slug' => Str::slug('Accesorios para celulares'),
-            ],
-
-            [
-                'category_id' => 1,
-                'name' => 'Smartwatches',
-                'slug' => Str::slug('Smartwatches'),
-            ],
-
-            /* TV, audio y video */
-
-            [
-                'category_id' => 2,
-                'name' => 'TV y audio',
-                'slug' => Str::slug('TV y audio'),
-            ],
-            [
-                'category_id' => 2,
-                'name' => 'Audios',
-                'slug' => Str::slug('Audios'),
-            ],
-
-            [
-                'category_id' => 2,
-                'name' => 'Audio para autos',
-                'slug' => Str::slug('Audio para autos'),
-            ],
-
-            /* Consola y videojuegos */
-            [
-                'category_id' => 3,
-                'name' => 'Xbox',
-                'slug' => Str::slug('xbos'),
-            ],
-
-            [
-                'category_id' => 3,
-                'name' => 'Play Station',
-                'slug' => Str::slug('Play Station'),
-            ],
-
-            [
-                'category_id' => 3,
-                'name' => 'Videojuegos para PC',
-                'slug' => Str::slug('Videojuegos para PC'),
-            ],
-
-            [
-                'category_id' => 3,
-                'name' => 'Nintendo',
-                'slug' => Str::slug('Nintendo'),
-            ],
-
-            /* Computación */
-
-            [
-                'category_id' => 4,
-                'name' => 'Portátiles',
-                'slug' => Str::slug('Portátiles'),
-            ],
-
-            [
-                'category_id' => 4,
-                'name' => 'PC escritorio',
-                'slug' => Str::slug('PC escritorio'),
-            ],
-
-            [
-                'category_id' => 4,
-                'name' => 'Almacenamiento',
-                'slug' => Str::slug('Almacenamiento'),
-            ],
-
-            [
-                'category_id' => 4,
-                'name' => 'Accesorios computadoras',
-                'slug' => Str::slug('Accesorios computadoras'),
-            ],
-
-            /* Moda */
-            [
-                'category_id' => 5,
-                'name' => 'Mujeres',
-                'slug' => Str::slug('Mujeres'),
+                'name' => 'Collares',
+                'slug' => Str::slug('Collares'),
                 'color' => true,
                 'size' => true
             ],
 
             [
-                'category_id' => 5,
-                'name' => 'Hombres',
-                'slug' => Str::slug('Hombres'),
+                'category_id' => 1,
+                'name' => 'Correa',
+                'slug' => Str::slug('Correa'),
                 'color' => true,
                 'size' => true
             ],
 
             [
-                'category_id' => 5,
-                'name' => 'Lentes',
-                'slug' => Str::slug('Lentes'),
+                'category_id' => 1,
+                'name' => 'Mochilas',
+                'slug' => Str::slug('Mochilas'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 1,
+                'name' => 'Pecheras',
+                'slug' => Str::slug('Pecheras'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 1,
+                'name' => 'Cepillo',
+                'slug' => Str::slug('Cepillo'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Palas',
+                'slug' => Str::slug('Palas'),
+            ],
+            [
+                'category_id' => 2,
+                'name' => 'Corta uñas',
+                'slug' => Str::slug('Corta uñas'),
+                'size' => true
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Peine',
+                'slug' => Str::slug('Peine'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Cepillo de dientes',
+                'slug' => Str::slug('Cepillo de dientes'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Dedales',
+                'slug' => Str::slug('Dedales'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Almooaza',
+                'slug' => Str::slug('Almooaza'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Cardas',
+                'slug' => Str::slug('Cardas'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Shampoo',
+                'slug' => Str::slug('Shampoo'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Locion',
+                'slug' => Str::slug('Locion'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Sanitizante',
+                'slug' => Str::slug('Sanitizante'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Espuma seco',
+                'slug' => Str::slug('Espuma seco'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Antiseptico',
+                'slug' => Str::slug('Antiseptico'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Eliminador de olores',
+                'slug' => Str::slug('Eliminador de olores'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Toalla',
+                'slug' => Str::slug('Toalla'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Quita pelusa',
+                'slug' => Str::slug('Quita pelusa'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Porta popos',
+                'slug' => Str::slug('Porta popos'),
+            ],
+
+            [
+                'category_id' => 2,
+                'name' => 'Jabones',
+                'slug' => Str::slug('Jabones'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 3,
+                'name' => 'Peluche',
+                'slug' => Str::slug('Peluche'),
+                'size' => true
+            ],
+
+            [
+                'category_id' => 3,
+                'name' => 'Pelota',
+                'slug' => Str::slug('Pelota'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 3,
+                'name' => 'Balon',
+                'slug' => Str::slug('Balon'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 3,
+                'name' => 'Juguete a distancia',
+                'slug' => Str::slug('Juguete a distancia'),
+            ],
+
+            [
+                'category_id' => 3,
+                'name' => 'Congelable',
+                'slug' => Str::slug('Congelable'),
+            ],
+
+            [
+                'category_id' => 3,
+                'name' => 'Tapete',
+                'slug' => Str::slug('Tapete'),
+                'color' => true,
+                'size' => true
+            ],
+
+            [
+                'category_id' => 4,
+                'name' => 'Carnaza',
+                'slug' => Str::slug('Carnaza'),
+                'size' => true
+            ],
+
+            [
+                'category_id' => 4,
+                'name' => 'Costales',
+                'slug' => Str::slug('Costales'),
+            ],
+
+            [
+                'category_id' => 4,
+                'name' => 'Premios',
+                'slug' => Str::slug('Premios'),
             ],
 
             [
                 'category_id' => 5,
-                'name' => 'Relojes',
-                'slug' => Str::slug('Relojes'),
+                'name' => 'Huesos',
+                'slug' => Str::slug('Huesos'),
+                'size' => true
             ],
+
+            [
+                'category_id' => 6,
+                'name' => 'Jeringa alimentación',
+                'slug' => Str::slug('Jeringa alimentación'),
+            ],
+
+            [
+                'category_id' => 6,
+                'name' => 'Kit medicina',
+                'slug' => Str::slug('Kit medicina'),
+            ],
+
+            [
+                'category_id' => 7,
+                'name' => 'Platos',
+                'slug' => Str::slug('Platos'),
+            ],
+
+            [
+                'category_id' => 7,
+                'name' => 'Kit medicina',
+                'slug' => Str::slug('Kit medicina'),
+            ],
+
+            [
+                'category_id' => 6,
+                'name' => 'Kit medicina',
+                'slug' => Str::slug('Kit medicina'),
+            ],
+
+            [
+                'category_id' => 6,
+                'name' => 'Kit medicina',
+                'slug' => Str::slug('Kit medicina'),
+            ],
+
         ];
 
         foreach ($subcategories as $subcategory) {
-            
+
 
             Subcategory::factory(1)->create($subcategory);
 
