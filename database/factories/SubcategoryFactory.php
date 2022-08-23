@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Smknstd\FakerPicsumImages\FakerPicsumImagesProvider;
 
 class SubcategoryFactory extends Factory
 {
@@ -22,7 +23,7 @@ class SubcategoryFactory extends Factory
     public function definition()
     {
         return [
-            'image' => 'subcategories/' . $this->faker->image('public/storage/subcategories', 640, 480, null, false) //imagen1.jpg
+            'image' => substr(FakerPicsumImagesProvider::image('public/storage/subcategories', 640, 480), 15) //imagen1.jpg
         ];
     }
 }

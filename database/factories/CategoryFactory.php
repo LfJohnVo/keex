@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Smknstd\FakerPicsumImages\FakerPicsumImagesProvider;
 
 class CategoryFactory extends Factory
 {
@@ -22,7 +23,7 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'image' => 'categories/' . $this->faker->image('public/storage/categories', 640, 480, null, false) //imagen1.jpg
+            'image' => substr(FakerPicsumImagesProvider::image('public\storage\categories', 640, 480), 15)
         ];
     }
 }
