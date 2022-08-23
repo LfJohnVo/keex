@@ -79,7 +79,7 @@ class AddCartItemSize extends Component
     public function added($value, $qty)
     {
         $this->alert('success', $qty . ' ' . $value . ' añadido al carrito', [
-            'position' =>  'top-end',
+            'position' =>  'center-start',
             'timer' =>  '2000',
             'toast' =>  true,
             'text' =>  '',

@@ -261,15 +261,101 @@ class SubcategorySeeder extends Seeder
             ],
 
             [
-                'category_id' => 6,
-                'name' => 'Kit medicina',
-                'slug' => Str::slug('Kit medicina'),
+                'category_id' => 7,
+                'name' => 'Camas',
+                'slug' => Str::slug('Camas'),
             ],
 
             [
-                'category_id' => 6,
-                'name' => 'Kit medicina',
-                'slug' => Str::slug('Kit medicina'),
+                'category_id' => 7,
+                'name' => 'Transportadoras',
+                'slug' => Str::slug('Transportadoras'),
+            ],
+
+            [
+                'category_id' => 8,
+                'name' => 'Calcetines',
+                'slug' => Str::slug('Calcetines'),
+            ],
+            [
+                'category_id' => 8,
+                'name' => 'Chamarras',
+                'slug' => Str::slug('Chamarras'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'Gato Adulto',
+                'slug' => Str::slug('Gato Adulto'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'Kitten',
+                'slug' => Str::slug('Kitten'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'Perro Adulto',
+                'slug' => Str::slug('Perro Adulto'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'NF Perro',
+                'slug' => Str::slug('NF Perro'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'EN Perro',
+                'slug' => Str::slug('EN Perro'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'Om Perro',
+                'slug' => Str::slug('Om Perro'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'Taste of the wild perro',
+                'slug' => Str::slug('Taste of the wild perro'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'Taste of the wild gato',
+                'slug' => Str::slug('Taste of the wild gato'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'Royal Canin',
+                'slug' => Str::slug('Royal Canin'),
+            ],
+            [
+                'category_id' => 9,
+                'name' => 'Canyon',
+                'slug' => Str::slug('Canyon'),
+            ],
+            [
+                'category_id' => 10,
+                'name' => 'Care sensitive',
+                'slug' => Str::slug('Care sensitive'),
+            ],
+            [
+                'category_id' => 10,
+                'name' => 'Renal formula',
+                'slug' => Str::slug('Renal formula'),
+            ],
+            [
+                'category_id' => 10,
+                'name' => 'Urinary Support',
+                'slug' => Str::slug('Urinary Support'),
+            ],
+            [
+                'category_id' => 10,
+                'name' => 'Senior Dog',
+                'slug' => Str::slug('Senior Dog'),
+            ],
+            [
+                'category_id' => 10,
+                'name' => 'Premium Adult Dog',
+                'slug' => Str::slug('Premium Adult Dog'),
             ],
 
         ];
